@@ -6,8 +6,9 @@
   <meta content="refining" name="csswg-work-status">
   <meta content="ED" name="w3c-status">
   <meta content="This CSS3 module defines properties for text manipulation and specifies their processing model. It covers line breaking, justification and alignment, white space handling, and text transformation." name="abstract">
-  <link href="../default.css" rel="stylesheet" type="text/css">
-  <link href="../csslogo.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://drafts.csswg.org/default.css" rel="stylesheet" type="text/css">
+  <link href="https://drafts.csswg.org/csslogo.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="custom.css" rel="stylesheet" type="text/css">
 <style>
   body {
     background: url("https://www.w3.org/StyleSheets/TR/logo-ED") top left no-repeat;
@@ -317,12 +318,13 @@ a#generator.generating [fill=blue] { animation-name: fill; } --></style><body cl
    <p class="copyright" data-fill-with="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2017 <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply. </p>
    <hr title="Separator for header">
   </div>
+  <p class="note ynote">本文中的注解是 Ivan Yan 的笔记，仅供参考，<a href="https://github.com/ynotes/css-text/">编辑</a>。</p>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>This CSS3 module defines properties for text manipulation and specifies their processing model. It covers line breaking, justification and alignment, white space handling, and text transformation.</p>
     <a href="http://www.w3.org/TR/CSS/">CSS</a> is a language for describing the rendering of structured documents
 (such as HTML and XML)
-on screen, on paper, in speech, etc. 
+on screen, on paper, in speech, etc.
   </div>
   <h2 class="no-num no-toc no-ref heading settled" id="status"><span class="content">Status of this document</span></h2>
   <div data-fill-with="status">
@@ -563,7 +565,7 @@ that is indivisible with respect to a particular typographic operation
    <p class="note" role="note"> The rules for such tailorings are out of scope for CSS. </p>
    <div class="example" id="example-79099c2f">
     <a class="self-link" href="#example-79099c2f"></a> The following are some examples of <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-4">typographic character unit</a> tailorings
-    required by standard typesetting practice: 
+    required by standard typesetting practice:
     <ul>
      <li>
       <p>In some scripts such as Myanmar or Devanagari,
@@ -658,7 +660,7 @@ that is indivisible with respect to a particular typographic operation
     <dd>Puts the first <a data-link-type="dfn" href="#typographic-letter-unit" id="ref-for-typographic-letter-unit-1">typographic letter unit</a> of each word, if lowercase, in titlecase;
           other characters are unaffected.
     <dt><dfn class="css" data-dfn-for="text-transform" data-dfn-type="value" data-export="" id="valdef-text-transform-uppercase">uppercase<a class="self-link" href="#valdef-text-transform-uppercase"></a></dfn>
-    <dd>Puts all <a data-link-type="dfn" href="#letter" id="ref-for-letter-1">letters</a> in uppercase. 
+    <dd>Puts all <a data-link-type="dfn" href="#letter" id="ref-for-letter-1">letters</a> in uppercase.
     <dt><dfn class="css" data-dfn-for="text-transform" data-dfn-type="value" data-export="" id="valdef-text-transform-lowercase">lowercase<a class="self-link" href="#valdef-text-transform-lowercase"></a></dfn>
     <dd>Puts all <a data-link-type="dfn" href="#letter" id="ref-for-letter-2">letters</a> in lowercase.
     <dt><dfn class="dfn-paneled css" data-dfn-for="text-transform" data-dfn-type="value" data-export="" id="valdef-text-transform-full-width">full-width</dfn>
@@ -666,14 +668,14 @@ that is indivisible with respect to a particular typographic operation
           If a character does not have a corresponding fullwidth form,
           it is left as is.
           This value is typically used to typeset Latin letters and digits
-          as if they were ideographic characters. 
+          as if they were ideographic characters.
    </dl>
    <p>For <a class="css" data-link-type="maybe" href="#valdef-text-transform-capitalize" id="ref-for-valdef-text-transform-capitalize-1">capitalize</a>, what constitutes a “word“ is UA-dependent; <a data-link-type="biblio" href="#biblio-uax29">[UAX29]</a> is suggested (but not required) for determining such word
       boundaries. Authors should not expect <a class="css" data-link-type="maybe" href="#valdef-text-transform-capitalize" id="ref-for-valdef-text-transform-capitalize-2">capitalize</a> to follow
       language-specific titlecasing conventions (such as skipping articles
       in English). </p>
    <div class="example" id="example-7cb4bb58">
-    <a class="self-link" href="#example-7cb4bb58"></a> 
+    <a class="self-link" href="#example-7cb4bb58"></a>
     <p>The following example converts the ASCII characters
         used in abbreviations in Japanese text to their fullwidth variants
         so that they lay out and line break like ideographs: </p>
@@ -690,7 +692,7 @@ that is indivisible with respect to a particular typographic operation
       These minimally include, but are not limited to, the language-specific
       rules in Unicode’s <a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a>. </p>
    <div class="example" id="example-12e88f74">
-    <a class="self-link" href="#example-12e88f74"></a> 
+    <a class="self-link" href="#example-12e88f74"></a>
     <p>For example, in Turkish there are two “i”s, one with
         a dot—“İ” and “i”— and one
         without—“I” and “ı”. Thus the usual
@@ -754,8 +756,8 @@ that is indivisible with respect to a particular typographic operation
    </table>
    <p>This property specifies two things: </p>
    <ul>
-    <li>whether and how <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-3">white space</a> inside the element is collapsed 
-    <li>whether lines may <a data-link-type="dfn" href="#wrapping" id="ref-for-wrapping-1">wrap</a> at unforced <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-1">soft wrap opportunities</a> 
+    <li>whether and how <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-3">white space</a> inside the element is collapsed
+    <li>whether lines may <a data-link-type="dfn" href="#wrapping" id="ref-for-wrapping-1">wrap</a> at unforced <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-1">soft wrap opportunities</a>
    </ul>
    <p>Values have the following meanings, which must be interpreted
     according to
@@ -766,20 +768,20 @@ that is indivisible with respect to a particular typographic operation
       cases</a>, no character).
       Lines may wrap at allowed <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-2">soft wrap opportunities</a>,
       as determined by the line-breaking rules in effect,
-      in order to minimize inline-axis overflow. 
+      in order to minimize inline-axis overflow.
     <dt><dfn class="dfn-paneled css" data-dfn-for="white-space" data-dfn-type="value" data-export="" id="valdef-white-space-pre">pre</dfn>
     <dd>This value prevents user agents from collapsing sequences of <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-5">white space</a>. <a data-link-type="dfn" href="#segment-break" id="ref-for-segment-break-1">Segment breaks</a> such as line feeds and carriage returns are preserved as <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-1">forced line breaks</a>.
       Lines only break at <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-2">forced line breaks</a>;
-      content that does not fit within the block container overflows it. 
-    <dt><dfn class="dfn-paneled css" data-dfn-for="white-space" data-dfn-type="value" data-export="" id="valdef-white-space-nowrap">nowrap</dfn> 
+      content that does not fit within the block container overflows it.
+    <dt><dfn class="dfn-paneled css" data-dfn-for="white-space" data-dfn-type="value" data-export="" id="valdef-white-space-nowrap">nowrap</dfn>
     <dd>Like <a class="css" data-link-type="maybe" href="#valdef-white-space-normal" id="ref-for-valdef-white-space-normal-1">normal</a>, this value collapses <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-6">white space</a>;
-      but like <a class="css" data-link-type="maybe" href="#valdef-white-space-pre" id="ref-for-valdef-white-space-pre-1">pre</a>, it does not allow wrapping. 
+      but like <a class="css" data-link-type="maybe" href="#valdef-white-space-pre" id="ref-for-valdef-white-space-pre-1">pre</a>, it does not allow wrapping.
     <dt><dfn class="dfn-paneled css" data-dfn-for="white-space" data-dfn-type="value" data-export="" id="valdef-white-space-pre-wrap">pre-wrap</dfn>
     <dd>Like <a class="css" data-link-type="maybe" href="#valdef-white-space-pre" id="ref-for-valdef-white-space-pre-2">pre</a>, this value preserves <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-7">white space</a>;
-      but like <a class="css" data-link-type="maybe" href="#valdef-white-space-normal" id="ref-for-valdef-white-space-normal-2">normal</a>, it allows wrapping. 
+      but like <a class="css" data-link-type="maybe" href="#valdef-white-space-normal" id="ref-for-valdef-white-space-normal-2">normal</a>, it allows wrapping.
     <dt><dfn class="dfn-paneled css" data-dfn-for="white-space" data-dfn-type="value" data-export="" id="valdef-white-space-pre-line">pre-line</dfn>
     <dd>Like <a class="css" data-link-type="maybe" href="#valdef-white-space-normal" id="ref-for-valdef-white-space-normal-3">normal</a>, this value collapses consecutive spaces and allows wrapping,
-      but preserves <a data-link-type="dfn" href="#segment-break" id="ref-for-segment-break-2">segment breaks</a> in the source as <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-3">forced line breaks</a>. 
+      but preserves <a data-link-type="dfn" href="#segment-break" id="ref-for-segment-break-2">segment breaks</a> in the source as <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-3">forced line breaks</a>.
    </dl>
    <p>The following informative table summarizes the behavior of various <a class="property" data-link-type="propdesc" href="#propdef-white-space" id="ref-for-propdef-white-space-2">white-space</a> values:</p>
    <table class="data">
@@ -822,10 +824,10 @@ that is indivisible with respect to a particular typographic operation
     collapsing (<a class="css" data-link-type="maybe" href="#valdef-white-space-normal" id="ref-for-valdef-white-space-normal-5">normal</a> and <a class="css" data-link-type="maybe" href="#valdef-white-space-nowrap" id="ref-for-valdef-white-space-nowrap-2">nowrap</a>) is presented below: </p>
    <ul>
     <li>A sequence of segment breaks and other <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-8">white space</a> between two
-        Chinese, Japanese, or Yi characters collapses into nothing. 
+        Chinese, Japanese, or Yi characters collapses into nothing.
     <li>A zero width space before or after a white space sequence
-        containing a segment break causes the entire sequence of <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-9">white space</a> to collapse into a zero width space. 
-    <li>Otherwise, consecutive <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-10">white space</a> collapses into a single space. 
+        containing a segment break causes the entire sequence of <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-9">white space</a> to collapse into a zero width space.
+    <li>Otherwise, consecutive <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-10">white space</a> collapses into a single space.
    </ul>
    <p>See <a href="#line-breaking">Line Breaking</a> for details on wrapping behavior. </p>
    <h2 class="heading settled" data-level="4" id="white-space-processing"><span class="secno">4. </span><span class="content"> White Space Processing Details</span><a class="self-link" href="#white-space-processing"></a></h2>
@@ -891,7 +893,7 @@ that is indivisible with respect to a particular typographic operation
       <li>All spaces and tabs immediately preceding or following a segment
           break are removed.
       <li><a data-link-type="dfn" href="#segment-break" id="ref-for-segment-break-4">Segment breaks</a> are transformed for
-          rendering according to the <a href="#line-break-transform">segment break transformation rules</a>. 
+          rendering according to the <a href="#line-break-transform">segment break transformation rules</a>.
       <li>Every tab is converted to a space (U+0020).
       <li>Any space immediately following another collapsible space—even
           one outside the boundary of the inline containing that space,
@@ -906,7 +908,7 @@ that is indivisible with respect to a particular typographic operation
      <p>Then, the entire block is rendered. Inlines are laid out, taking bidi
       reordering into account, and <a data-link-type="dfn" href="#wrapping" id="ref-for-wrapping-2">wrapping</a> as specified by the <a class="property" data-link-type="propdesc" href="#propdef-white-space" id="ref-for-propdef-white-space-7">white-space</a> property.</p>
      <div class="example" id="egbidiwscollapse">
-      <a class="self-link" href="#egbidiwscollapse"></a> 
+      <a class="self-link" href="#egbidiwscollapse"></a>
       <p>The following example illustrates
         the interaction of white-space collapsing and bidirectionality.
         Consider the following markup fragment, taking special note of spaces
@@ -918,9 +920,9 @@ that is indivisible with respect to a particular typographic operation
         the white-space processing model will result in the following: </p>
       <ul style="line-height:1.3">
        <li>The space before the B (<span class="egbidiwsbB"> </span>)
-          will collapse with the space after the A (<span class="egbidiwsaA"> </span>). 
+          will collapse with the space after the A (<span class="egbidiwsaA"> </span>).
        <li>The space before the C (<span class="egbidiwsbC"> </span>)
-          will collapse with the space after the B (<span class="egbidiwsaB"> </span>). 
+          will collapse with the space after the B (<span class="egbidiwsaB"> </span>).
       </ul>
       <p>This will leave two spaces,
         one after the A in the left-to-right embedding level,
@@ -945,11 +947,11 @@ that is indivisible with respect to a particular typographic operation
      <ul>
       <li>If the character immediately before or immediately after the segment
           break is the zero-width space character (U+200B), then the break
-          is removed, leaving behind the zero-width space. 
+          is removed, leaving behind the zero-width space.
       <li>Otherwise, if the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-1">East Asian Width property</a> <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> of both
           the character before and after the segment break is <code>F</code>, <code>W</code>, or <code>H</code> (not <code>A</code>),
-          and neither side is Hangul, then the segment break is removed. 
-      <li>Otherwise, the segment break is converted to a space (U+0020). 
+          and neither side is Hangul, then the segment break is removed.
+      <li>Otherwise, the segment break is converted to a space (U+0020).
      </ul>
      <p class="note" role="note">Note that the white space processing rules have already
         removed any tabs and spaces after the segment break before these checks
@@ -963,13 +965,13 @@ that is indivisible with respect to a particular typographic operation
      <p>As each line is laid out,</p>
      <ol>
       <li>A sequence of collapsible spaces at the beginning of a line is
-        removed. 
+        removed.
       <li>If the tab size is zero, tabs are not rendered.
         Otherwise, each tab is rendered as a horizontal shift
         that lines up the start edge of the next glyph with the next <a data-link-type="dfn" href="#tab-stop" id="ref-for-tab-stop-1">tab stop</a>. <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="tab stop" data-noexport="" id="tab-stop">Tab stops</dfn> occur at points that are multiples of the tab size
         from the block’s starting content edge.
-        The tab size is given by the <a class="property" data-link-type="propdesc" href="#propdef-tab-size" id="ref-for-propdef-tab-size-1">tab-size</a> property. 
-      <li>A sequence of <a data-link-type="dfn" href="#collapsible-white-space" id="ref-for-collapsible-white-space-4">collapsible</a> spaces at the end of a line is removed. 
+        The tab size is given by the <a class="property" data-link-type="propdesc" href="#propdef-tab-size" id="ref-for-propdef-tab-size-1">tab-size</a> property.
+      <li>A sequence of <a data-link-type="dfn" href="#collapsible-white-space" id="ref-for-collapsible-white-space-4">collapsible</a> spaces at the end of a line is removed.
       <li>
        If spaces or tabs at the end of a line are non-collapsible
          but have <a class="property" data-link-type="propdesc" href="#propdef-white-space" id="ref-for-propdef-white-space-11">white-space</a> set to <a class="css" data-link-type="maybe" href="#valdef-white-space-pre-wrap" id="ref-for-valdef-white-space-pre-wrap-4">pre-wrap</a> the UA must either <a data-link-type="dfn" href="#hang" id="ref-for-hang-1">hang</a> the <a data-link-type="dfn" href="#white-space" id="ref-for-white-space-14">white space</a> or visually collapse the character advance widths
@@ -977,7 +979,7 @@ that is indivisible with respect to a particular typographic operation
          such that they don’t take up space in the line.
          However, if <a class="property" data-link-type="propdesc" href="#propdef-overflow-wrap" id="ref-for-propdef-overflow-wrap-1">overflow-wrap</a> is set to <a class="css" data-link-type="maybe" href="#valdef-overflow-wrap-break-spaces" id="ref-for-valdef-overflow-wrap-break-spaces-1">break-spaces</a>,
          collapsing their advance width is not allowed,
-         as this would prevent the preserved spaces from wrapping. 
+         as this would prevent the preserved spaces from wrapping.
        <p class="note" role="note"><span>Note:</span> Hanging the white space rather than collapsing it
          allows users to see the space when selecting or editing text.</p>
      </ol>
@@ -1059,9 +1061,9 @@ that is indivisible with respect to a particular typographic operation
       <li>Regardless of the <a class="property" data-link-type="propdesc" href="#propdef-white-space" id="ref-for-propdef-white-space-12">white-space</a> value,
       lines always break at each <a data-link-type="dfn" href="#preserved" id="ref-for-preserved-2">preserved</a> forced break character:
       for all values, line-breaking behavior defined for
-      the BK, CR, LF, CM, NL, and SG line breaking classes in <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a> must be honored. 
+      the BK, CR, LF, CM, NL, and SG line breaking classes in <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a> must be honored.
       <li>When <a class="property" data-link-type="propdesc" href="#propdef-white-space" id="ref-for-propdef-white-space-13">white-space</a> allows wrapping,
-      line breaking behavior defined for the WJ, ZW, and GL line-breaking classes in <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a> must be honored. 
+      line breaking behavior defined for the WJ, ZW, and GL line-breaking classes in <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a> must be honored.
       <li>UAs that allow wrapping at punctuation other than spaces should prioritize breakpoints.
       For example, if breaks after slashes are given a lower priority than spaces,
       the sequence "check /etc" will never break between the "/" and the "e".
@@ -1069,20 +1071,20 @@ that is indivisible with respect to a particular typographic operation
       appropriate punctuation other than spaces is recommended, as it results
       in more even-looking margins, particularly in narrow measures.
       The UA may use the width of the containing block, the text’s language,
-      and other factors in assigning priorities. 
-      <li>Out-of-flow elements do not introduce a <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-4">forced line break</a> or <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-10">soft wrap opportunity</a> in the flow. 
+      and other factors in assigning priorities.
+      <li>Out-of-flow elements do not introduce a <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-4">forced line break</a> or <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-10">soft wrap opportunity</a> in the flow.
       <li>The line breaking behavior of a replaced element or other atomic inline
       is equivalent to an ideographic character
       (Unicode linebreaking class <code>ID</code> <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a>),
-      and additionally, for Web-compatibility, introduces a <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-11">soft wrap opportunity</a> between itself and any adjacent U+00A0 NO-BREAK SPACE character. 
+      and additionally, for Web-compatibility, introduces a <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-11">soft wrap opportunity</a> between itself and any adjacent U+00A0 NO-BREAK SPACE character.
       <li>For <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-12">soft wrap opportunities</a> created by characters that disappear at the line break (e.g. U+0020 SPACE),
       properties on the box directly containing that character control the line breaking at that opportunity.
       For <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-13">soft wrap opportunities</a> defined by the boundary between two characters,
-      the properties on nearest common ancestor of the two characters controls breaking. 
+      the properties on nearest common ancestor of the two characters controls breaking.
       <li>For <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-14">soft wrap opportunities</a> before the first or after the last character of a box,
       the break occurs immediately before/after the box (at its margin edge)
-      rather than breaking the box between its content edge and the content. 
-      <li>Line breaking in/around Ruby is defined in <a href="https://www.w3.org/TR/css-ruby-1/#line-breaks">CSS Ruby</a> <a data-link-type="biblio" href="#biblio-css3ruby">[CSS3RUBY]</a>. 
+      rather than breaking the box between its content edge and the content.
+      <li>Line breaking in/around Ruby is defined in <a href="https://www.w3.org/TR/css-ruby-1/#line-breaks">CSS Ruby</a> <a data-link-type="biblio" href="#biblio-css3ruby">[CSS3RUBY]</a>.
      </ul>
      <h3 class="heading settled" data-level="5.2" id="word-break-property"><span class="secno">5.2. </span><span class="content"> Breaking Rules for Letters: the <a class="property" data-link-type="propdesc" href="#propdef-word-break" id="ref-for-propdef-word-break-1">word-break</a> property</span><a class="self-link" href="#word-break-property"></a></h3>
      <table class="def propdef" data-link-for-hint="word-break">
@@ -1125,12 +1127,12 @@ that is indivisible with respect to a particular typographic operation
       It does not affect rules governing the <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-17">soft wrap opportunities</a> created by spaces and punctuation.
       (See <a class="property" data-link-type="propdesc" href="#propdef-line-break" id="ref-for-propdef-line-break-1">line-break</a> for controls affecting punctuation.) </p>
      <div class="example" id="example-1497b2a9">
-      <a class="self-link" href="#example-1497b2a9"></a> 
+      <a class="self-link" href="#example-1497b2a9"></a>
       <p>For example, in some styles of CJK typesetting, English words are allowed
         to break between any two letters, rather than only at spaces or hyphenation points;
         this can be enabled with <span class="css">word-break:break-all</span>. </p>
       <div class="figure">
-        <img alt="A snippet of Japanese text with English in it. The word &apos;caption&apos; is broken into &apos;capt&apos; and &apos;ion&apos; across two lines." src="images/break-all.png"> 
+        <img alt="A snippet of Japanese text with English in it. The word &apos;caption&apos; is broken into &apos;capt&apos; and &apos;ion&apos; across two lines." src="images/break-all.png">
        <p class="caption">An example of English text embedded in Japanese
           being broken at an arbitrary point in the word. </p>
       </div>
@@ -1148,7 +1150,7 @@ that is indivisible with respect to a particular typographic operation
       <dd>Words break according to their customary rules,
        as described <a href="#line-breaking">above</a>.
        Korean, which commonly exhibits two different behaviors,
-       allows breaks between any two consecutive Hangul/Hanja. 
+       allows breaks between any two consecutive Hangul/Hanja.
       <dt><dfn class="dfn-paneled css" data-dfn-for="word-break" data-dfn-type="value" data-export="" id="valdef-word-break-break-all">break-all</dfn>
       <dd>Breaking is allowed within “words”:
         in addition to <a class="css" data-link-type="maybe" href="#valdef-word-break-normal" id="ref-for-valdef-word-break-normal-1">normal</a> <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-18">soft wrap opportunities</a>:
@@ -1166,7 +1168,7 @@ that is indivisible with respect to a particular typographic operation
         (regardless of <a class="property" data-link-type="propdesc" href="#propdef-line-break" id="ref-for-propdef-line-break-2">line-break</a> settings)
         except where opportunities exist due to dictionary-based breaking.
         Otherwise this option is equivalent to <a class="css" data-link-type="maybe" href="#valdef-word-break-normal" id="ref-for-valdef-word-break-normal-2">normal</a>.
-        In this style, sequences of CJK characters do not break. 
+        In this style, sequences of CJK characters do not break.
        <p class="note" role="note">This is the other common behavior for Korean (which uses spaces between words),
         and is also useful for mixed-script text where CJK snippets are mixed
         into another language that uses spaces for separation.</p>
@@ -1174,9 +1176,9 @@ that is indivisible with respect to a particular typographic operation
      <p>Symbols that line-break the same way as letters of a particular category
     are affected the same way as those letters. </p>
      <div class="example" id="example-cfc6bf5b">
-      <a class="self-link" href="#example-cfc6bf5b"></a> 
+      <a class="self-link" href="#example-cfc6bf5b"></a>
       <p>Here’s a mixed-script sample text: </p>
-<pre>这是一些汉字, and some Latin, و کمی نوشتن عربی, 
+<pre>这是一些汉字, and some Latin, و کمی نوشتن عربی,
 และตัวอย่างการเขียนภาษาไทย.</pre>
       <p>The break-points are determined as follows (indicated by ‘·’): </p>
       <dl>
@@ -1240,7 +1242,7 @@ that is indivisible with respect to a particular typographic operation
       <dt><dfn class="css" data-dfn-for="line-break" data-dfn-type="value" data-export="" id="valdef-line-break-auto">auto<a class="self-link" href="#valdef-line-break-auto"></a></dfn>
       <dd>The UA determines the set of line-breaking restrictions to use,
         and it may vary the restrictions based on the length of the line; e.g.,
-        use a less restrictive set of line-break rules for short lines. 
+        use a less restrictive set of line-break rules for short lines.
       <dt><dfn class="dfn-paneled css" data-dfn-for="line-break" data-dfn-type="value" data-export="" id="valdef-line-break-loose">loose</dfn>
       <dd>Breaks text using the least restrictive set of line-breaking
         rules. Typically used for short lines, such as in newspapers.
@@ -1262,42 +1264,42 @@ that is indivisible with respect to a particular typographic operation
      <ul>
       <li>
         The following breaks are forbidden in <a class="css" data-link-type="maybe" href="#valdef-line-break-strict" id="ref-for-valdef-line-break-strict-1">strict</a> line breaking
-        and allowed in <a class="css" data-link-type="maybe" href="#valdef-line-break-normal" id="ref-for-valdef-line-break-normal-1">normal</a> and <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-1">loose</a>: 
+        and allowed in <a class="css" data-link-type="maybe" href="#valdef-line-break-normal" id="ref-for-valdef-line-break-normal-1">normal</a> and <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-1">loose</a>:
        <ul>
         <li>breaks before Japanese small kana or the Katakana-Hiragana prolonged sound mark:
             i.e. characters with the Unicode Line Break property <code>CJ</code>.
-            (See <a href="http://www.unicode.org/Public/UNIDATA/LineBreak.txt">LineBreak.txt</a> in <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a>.) 
+            (See <a href="http://www.unicode.org/Public/UNIDATA/LineBreak.txt">LineBreak.txt</a> in <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a>.)
        </ul>
       <li>
         The following breaks are allowed for <a class="css" data-link-type="maybe" href="#valdef-line-break-normal" id="ref-for-valdef-line-break-normal-2">normal</a> and <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-2">loose</a> line breaking
         if the <a data-link-type="dfn" href="#content-language" id="ref-for-content-language-6">content language</a> is Chinese or Japanese,
-        and are otherwise forbidden: 
+        and are otherwise forbidden:
        <ul>
         <li>breaks before hyphens:<br> ‐ U+2010,  – U+2013,  〜 U+301C,
-            ゠ U+30A0 
+            ゠ U+30A0
        </ul>
       <li>
         The following breaks are forbidden for <a class="css" data-link-type="maybe" href="#valdef-line-break-normal" id="ref-for-valdef-line-break-normal-3">normal</a> and <a class="css" data-link-type="maybe" href="#valdef-line-break-strict" id="ref-for-valdef-line-break-strict-2">strict</a> line breaking
-        and allowed in <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-3">loose</a>: 
+        and allowed in <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-3">loose</a>:
        <ul>
         <li>breaks before iteration marks:<br> 々 U+3005,  〻 U+303B,  ゝ U+309D,
-            ゞ U+309E,  ヽ U+30FD,  ヾ U+30FE 
+            ゞ U+309E,  ヽ U+30FD,  ヾ U+30FE
         <li>breaks between inseparable characters
             such as ‥ U+2025,  … U+2026
             i.e. characters with the Unicode Line Break property <code>IN</code>.
-            (See <a href="http://www.unicode.org/Public/UNIDATA/LineBreak.txt">LineBreak.txt</a> in <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a>.) 
+            (See <a href="http://www.unicode.org/Public/UNIDATA/LineBreak.txt">LineBreak.txt</a> in <a data-link-type="biblio" href="#biblio-unicode">[UNICODE]</a>.)
        </ul>
       <li>
         The following breaks are allowed for <a class="css" data-link-type="maybe" href="#valdef-line-break-loose" id="ref-for-valdef-line-break-loose-4">loose</a> if the <a data-link-type="dfn" href="#content-language" id="ref-for-content-language-7">content language</a> is Chinese or Japanese
-        and are otherwise forbidden: 
+        and are otherwise forbidden:
        <ul>
         <li>breaks before certain centered punctuation marks:<br> ・ U+30FB,
             ： U+FF1A,  ； U+FF1B,  ･ U+FF65,
             ‼ U+203C,
             ⁇ U+2047,  ⁈ U+2048,  ⁉ U+2049,
-            ！ U+FF01,  ？ U+FF1F 
-        <li>breaks before suffixes:<br> Characters with the Unicode Line Break property <code>PO</code> and the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-2">East Asian Width property</a> <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> <code>A</code>, <code>F</code>, or <code>W</code>. 
-        <li>breaks after prefixes:<br> Characters with the Unicode Line Break property <code>PR</code> and the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-3">East Asian Width property</a> <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> <code>A</code>, <code>F</code>, or <code>W</code>. 
+            ！ U+FF01,  ？ U+FF1F
+        <li>breaks before suffixes:<br> Characters with the Unicode Line Break property <code>PO</code> and the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-2">East Asian Width property</a> <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> <code>A</code>, <code>F</code>, or <code>W</code>.
+        <li>breaks after prefixes:<br> Characters with the Unicode Line Break property <code>PR</code> and the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-3">East Asian Width property</a> <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> <code>A</code>, <code>F</code>, or <code>W</code>.
        </ul>
      </ul>
      <p class="note" role="note">In the recommended list above, no distinction is made among the levels of
@@ -1364,21 +1366,21 @@ that is indivisible with respect to a particular typographic operation
      <p>This property controls whether hyphenation is allowed to create more <a data-link-type="dfn" href="#soft-wrap-opportunity" id="ref-for-soft-wrap-opportunity-21">soft wrap opportunities</a> within a line of text.
       Values have the following meanings: </p>
      <dl>
-      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-none">none<a class="self-link" href="#valdef-hyphens-none"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-none">none<a class="self-link" href="#valdef-hyphens-none"></a></dfn>
       <dd>Words are not hyphenated, even if characters inside
-          the word explicitly define <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-1">hyphenation opportunities</a>. 
-      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-manual">manual<a class="self-link" href="#valdef-hyphens-manual"></a></dfn> 
+          the word explicitly define <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-1">hyphenation opportunities</a>.
+      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-manual">manual<a class="self-link" href="#valdef-hyphens-manual"></a></dfn>
       <dd>
        Words are only hyphenated where there are characters inside the word
-          that explicitly suggest <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-2">hyphenation opportunities</a>. 
+          that explicitly suggest <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-2">hyphenation opportunities</a>.
        <div class="example" id="example-23300600">
-        <a class="self-link" href="#example-23300600"></a> 
+        <a class="self-link" href="#example-23300600"></a>
         <p>In Unicode, U+00AD is a conditional "soft hyphen" and U+2010 is an
           unconditional hyphen. Unicode Standard Annex #14 describes the <a href="http://unicode.org/reports/tr14/#SoftHyphen">role of soft hyphens in</a> Unicode line breaking. <a data-link-type="biblio" href="#biblio-uax14">[UAX14]</a> In HTML, &amp;shy; represents the soft hyphen character,
           which suggests a hyphenation opportunity. </p>
 <pre>ex&amp;shy;ample</pre>
        </div>
-      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-auto">auto<a class="self-link" href="#valdef-hyphens-auto"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="hyphens" data-dfn-type="value" data-export="" id="valdef-hyphens-auto">auto<a class="self-link" href="#valdef-hyphens-auto"></a></dfn>
       <dd>Words may be broken at <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-3">hyphenation opportunities</a> determined automatically by a language-appropriate hyphenation resource
           in addition to those indicated explicitly by a conditional hyphen.
           Automatic <a data-link-type="dfn" href="#hyphenation-opportunity" id="ref-for-hyphenation-opportunity-4">hyphenation opportunities</a> within a word must be ignored
@@ -1386,7 +1388,7 @@ that is indivisible with respect to a particular typographic operation
           in favor of the conditional hyphen(s).
           However, if, even after breaking at such opportunities,
           a portion of that word is is still too long to fit on one line,
-          an automatic hyphenation opportunity may be used. 
+          an automatic hyphenation opportunity may be used.
      </dl>
      <p>Correct automatic hyphenation requires a hyphenation resource
       appropriate to the language of the text being broken.
@@ -1402,7 +1404,7 @@ that is indivisible with respect to a particular typographic operation
       the characters must still be shaped
       as if the word were <a href="#word-break-shaping">not broken</a>. </p>
      <div class="example" id="example-953e914f">
-      <a class="self-link" href="#example-953e914f"></a> 
+      <a class="self-link" href="#example-953e914f"></a>
       <p>For example, if the Uyghur word “داميدى”
       were hyphenated, it would appear as <img alt="[isolated DAL + isolated ALEF + initial MEEM + medial YEH + hyphen + line-break + final DAL + isolated ALEF MAKSURA]" src="images/uyghur-hyphenate-joined.png"> not as <img alt="[isolated DAL + isolated ALEF + initial MEEM + final YEH + hyphen + line-break + isolated DAL + isolated ALEF MAKSURA]" src="images/uyghur-hyphenate-unjoined.png"> </p>
      </div>
@@ -1454,14 +1456,14 @@ that is indivisible with respect to a particular typographic operation
       there are no otherwise-acceptable break points in the line.
       Shaping characters are still shaped as if the word were not
       broken, and grapheme clusters must stay together as one unit.
-      No hyphenation character is inserted at the break point. 
+      No hyphenation character is inserted at the break point.
       <dt><dfn class="dfn-paneled css" data-dfn-for="overflow-wrap" data-dfn-type="value" data-export="" id="valdef-overflow-wrap-break-spaces">break-spaces</dfn>
       <dd>
        Line breaks are handled as usual,
       except that any sequence of <a data-link-type="dfn" href="#preserved" id="ref-for-preserved-4">preserved</a> white space
       that would otherwise overflow the line and <a data-link-type="dfn" href="#hang" id="ref-for-hang-3">hang</a> as per <a href="#white-space-phase-2">Trimming and Positioning</a> must be broken after the last white space character that would fit the line,
       or after the first white space in the sequence if none would fit,
-      or before the first space in the sequence if none would fit and both <a class="css" data-link-type="maybe" href="#valdef-overflow-wrap-break-word" id="ref-for-valdef-overflow-wrap-break-word-1">break-word</a> and <a class="css" data-link-type="maybe" href="#valdef-overflow-wrap-break-spaces" id="ref-for-valdef-overflow-wrap-break-spaces-2">break-spaces</a> are specified. 
+      or before the first space in the sequence if none would fit and both <a class="css" data-link-type="maybe" href="#valdef-overflow-wrap-break-word" id="ref-for-valdef-overflow-wrap-break-word-1">break-word</a> and <a class="css" data-link-type="maybe" href="#valdef-overflow-wrap-break-spaces" id="ref-for-valdef-overflow-wrap-break-spaces-2">break-spaces</a> are specified.
        <p class="note" role="note">This last clause is due to the fact that
       'overflow-wrap: break-words'' allows breaks between any two characters
       to avoid overflow</p>
@@ -1531,34 +1533,34 @@ that is indivisible with respect to a particular typographic operation
       Values have the following meanings:</p>
      <dl>
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-start">start</dfn>
-      <dd>Inline-level content is aligned to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a> edge of the line box. 
+      <dd>Inline-level content is aligned to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a> edge of the line box.
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-end">end</dfn>
-      <dd>Inline-level content is aligned to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edge of the line box. 
+      <dd>Inline-level content is aligned to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edge of the line box.
       <dt><dfn class="css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-left">left<a class="self-link" href="#valdef-text-align-left"></a></dfn>
       <dd>Inline-level content is aligned to the <a href="https://www.w3.org/TR/css3-writing-modes/#line-left">line left</a> edge of the line box.
         (In vertical writing modes,
          this will be either the physical top or bottom,
-         depending on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-orientation">text-orientation</a>.) <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
+         depending on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-orientation">text-orientation</a>.) <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a>
       <dt><dfn class="css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-right">right<a class="self-link" href="#valdef-text-align-right"></a></dfn>
       <dd>Inline-level content is aligned to the <a href="https://www.w3.org/TR/css3-writing-modes/#line-right">line right</a> edge of the line box.
         (In vertical writing modes,
          this will be either the physical top or bottom,
-         depending on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-orientation">text-orientation</a>.) <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
+         depending on <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-4/#propdef-text-orientation">text-orientation</a>.) <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a>
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-center">center</dfn>
-      <dd>Inline-level content is centered within the line box. 
+      <dd>Inline-level content is centered within the line box.
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-justify">justify</dfn>
       <dd>Text is justified according to the method specified by the <a class="property" data-link-type="propdesc" href="#propdef-text-justify" id="ref-for-propdef-text-justify-1">text-justify</a> property,
         in order to exactly fill the line box.
         Unless otherwise specified by <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-2">text-align-last</a>,
-        the last line before a forced break or the end of the block is <a class="css" data-link-type="maybe" href="#valdef-text-align-start" id="ref-for-valdef-text-align-start-1">start</a>-aligned. 
+        the last line before a forced break or the end of the block is <a class="css" data-link-type="maybe" href="#valdef-text-align-start" id="ref-for-valdef-text-align-start-1">start</a>-aligned.
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-justify-all">justify-all</dfn>
       <dd>Same as <a class="css" data-link-type="maybe" href="#valdef-text-align-justify" id="ref-for-valdef-text-align-justify-1">justify</a>, except <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-3">text-align-last</a> is also set to <a class="css" data-link-type="maybe" href="#valdef-text-align-justify" id="ref-for-valdef-text-align-justify-2">justify</a>,
-        forcing the last line to justify as well. 
+        forcing the last line to justify as well.
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-align" data-dfn-type="value" data-export="" id="valdef-text-align-match-parent">match-parent</dfn>
       <dd>This value behaves the same as <a class="css" data-link-type="maybe" href="https://drafts.csswg.org/css-cascade-4/#valdef-all-inherit">inherit</a> (computes to its parent’s computed value)
         except that an inherited <a class="css" data-link-type="maybe" href="#valdef-text-align-start" id="ref-for-valdef-text-align-start-2">start</a> or <a class="css" data-link-type="maybe" href="#valdef-text-align-end" id="ref-for-valdef-text-align-end-1">end</a> keyword
         is interpreted against its parent’s <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">direction</a> value
-        and results in a computed value of either <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-left">left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-right">right</a>. 
+        and results in a computed value of either <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-left">left</a> or <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-position-3/#propdef-right">right</a>.
      </dl>
      <p>All values except <a class="css" data-link-type="maybe" href="#valdef-text-align-justify-all" id="ref-for-valdef-text-align-justify-all-1">justify-all</a> reset <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-4">text-align-last</a> to <a class="css" data-link-type="maybe" href="#valdef-text-align-last-auto" id="ref-for-valdef-text-align-last-auto-1">auto</a>. </p>
      <p>A block of text is a stack of <a href="https://www.w3.org/TR/CSS21/visuren.html#line-box">line boxes</a>.
@@ -1701,7 +1703,7 @@ that is indivisible with respect to a particular typographic operation
        The UA determines the justification algorithm to follow, based
           on a balance between performance and adequate presentation quality.
           Since justification rules vary by writing system and language,
-          UAs should, where possible, use a justification algorithm appropriate to the text. 
+          UAs should, where possible, use a justification algorithm appropriate to the text.
        <p class="example" id="example-997b671a"><a class="self-link" href="#example-997b671a"></a> For example, the UA could use by default a justification method that is a
           simple universal compromise for all writing systems—such as
           primarily expanding <a data-link-type="dfn" href="#word-separator" id="ref-for-word-separator-1">word separators</a> and between CJK <a data-link-type="dfn" href="#typographic-letter-unit" id="ref-for-typographic-letter-unit-4">typographic letter units</a> along with secondarily expanding between Southeast Asian <a data-link-type="dfn" href="#typographic-letter-unit" id="ref-for-typographic-letter-unit-5">typographic letter units</a>.
@@ -1736,7 +1738,7 @@ that is indivisible with respect to a particular typographic operation
        </div>
       <dt><dfn class="css" data-dfn-for="text-justify" data-dfn-type="value" data-export="" id="valdef-text-justify-none">none<a class="self-link" href="#valdef-text-justify-none"></a></dfn>
       <dd>
-       Justification is disabled: there are no <a data-link-type="dfn" href="#justification-opportunity" id="ref-for-justification-opportunity-2">justification opportunities</a> within the text. 
+       Justification is disabled: there are no <a data-link-type="dfn" href="#justification-opportunity" id="ref-for-justification-opportunity-2">justification opportunities</a> within the text.
        <div class="figure" id="fig-text-justify-none">
         <p> <img alt="No extra space is insesrted." src="images/text-justify-none.png"></p>
         <p class="caption">Mixed-script text with <a class="css" data-link-type="propdesc" href="#propdef-text-justify" id="ref-for-propdef-text-justify-5">text-justify: none</a> </p>
@@ -1748,7 +1750,7 @@ that is indivisible with respect to a particular typographic operation
        Justification adjusts spacing at <a data-link-type="dfn" href="#word-separator" id="ref-for-word-separator-2">word separators</a> only
           (effectively varying the used <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-2">word-spacing</a> on the line).
           This behavior is typical for languages that separate words using spaces,
-          like English or Korean. 
+          like English or Korean.
        <div class="figure" id="fig-text-justify-interword">
         <p> <img alt="Extra space is equally distributed mainly to spaces." src="images/text-justify-interword.png"></p>
         <p class="caption">Mixed-script text with <a class="css" data-link-type="propdesc" href="#propdef-text-justify" id="ref-for-propdef-text-justify-6">text-justify: inter-word</a> </p>
@@ -1756,12 +1758,12 @@ that is indivisible with respect to a particular typographic operation
       <dt><dfn class="dfn-paneled css" data-dfn-for="text-justify" data-dfn-type="value" data-export="" id="valdef-text-justify-inter-character">inter-character</dfn>
       <dd>
        Justification adjusts spacing between each pair of adjacent <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-14">typographic character units</a> (effectively varying the used <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-2">letter-spacing</a> on the line).
-          This value is sometimes used in East Asian systems such as Japanese. 
+          This value is sometimes used in East Asian systems such as Japanese.
        <div class="figure" id="fig-text-justify-distribute">
         <p> <img alt="Extra space is equally distributed at points between spaces and letters of all writing systems." src="images/text-justify-distribute.png"></p>
         <p class="caption">Mixed-script text with <a class="css" data-link-type="propdesc" href="#propdef-text-justify" id="ref-for-propdef-text-justify-7">text-justify: inter-character</a> </p>
        </div>
-        For legacy reasons, UAs must also support the alternate keyword <dfn class="css" data-dfn-for="text-justify" data-dfn-type="value" data-export="" id="valdef-text-justify-distribute">distribute<a class="self-link" href="#valdef-text-justify-distribute"></a></dfn> with the exact same meaning and behavior. 
+        For legacy reasons, UAs must also support the alternate keyword <dfn class="css" data-dfn-for="text-justify" data-dfn-type="value" data-export="" id="valdef-text-justify-distribute">distribute<a class="self-link" href="#valdef-text-justify-distribute"></a></dfn> with the exact same meaning and behavior.
      </dl>
      <p class="advisement"> Since optimal justification is language-sensitive,
       authors should correctly language-tag their content for the best results. </p>
@@ -1846,7 +1848,7 @@ that is indivisible with respect to a particular typographic operation
       It otherwise <em>must</em> assume that no <a data-link-type="dfn" href="#justification-opportunity" id="ref-for-justification-opportunity-17">justification opportunity</a> exists
       between any pair of <a data-link-type="dfn" href="#typographic-letter-unit" id="ref-for-typographic-letter-unit-10">typographic letter units</a> in <a data-link-type="dfn" href="#cursive-script" id="ref-for-cursive-script-2">cursive script</a> (regardless of whether they join). </p>
      <div class="example" id="example-de4ec6de">
-      <a class="self-link" href="#example-de4ec6de"></a> 
+      <a class="self-link" href="#example-de4ec6de"></a>
       <p>The following are examples of unacceptable justification: </p>
       <div class="figure">
        <p><img alt="" src="images/arabic-stretch-spaced.png"> </p>
@@ -1870,17 +1872,17 @@ that is indivisible with respect to a particular typographic operation
      <ul>
       <li>
         Unless contraindicated by the typographic traditions of the <a data-link-type="dfn" href="#content-language" id="ref-for-content-language-11">content language</a> or adjacent symbols/punctuation,
-      each of the following provides a <a data-link-type="dfn" href="#justification-opportunity" id="ref-for-justification-opportunity-20">justification opportunity</a>: 
+      each of the following provides a <a data-link-type="dfn" href="#justification-opportunity" id="ref-for-justification-opportunity-20">justification opportunity</a>:
        <ul>
-        <li><a data-link-type="dfn" href="#word-separator" id="ref-for-word-separator-5">Word separators</a> 
-        <li>The boundary between a <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-23">typographic character unit</a> of any <a data-link-type="dfn" href="#block-scripts" id="ref-for-block-scripts-1">block scripts</a> and any other <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-24">typographic character unit</a> 
-        <li>The boundary between a <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-25">typographic character unit</a> of any <a data-link-type="dfn" href="#clustered-scripts" id="ref-for-clustered-scripts-1">clustered scripts</a> and any other <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-26">typographic character unit</a> 
+        <li><a data-link-type="dfn" href="#word-separator" id="ref-for-word-separator-5">Word separators</a>
+        <li>The boundary between a <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-23">typographic character unit</a> of any <a data-link-type="dfn" href="#block-scripts" id="ref-for-block-scripts-1">block scripts</a> and any other <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-24">typographic character unit</a>
+        <li>The boundary between a <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-25">typographic character unit</a> of any <a data-link-type="dfn" href="#clustered-scripts" id="ref-for-clustered-scripts-1">clustered scripts</a> and any other <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-26">typographic character unit</a>
        </ul>
       <li> All <a data-link-type="dfn" href="#letter" id="ref-for-letter-3">letters</a> belonging to all <a data-link-type="dfn" href="#block-scripts" id="ref-for-block-scripts-2">block scripts</a> are treated the same,
       and all <a data-link-type="dfn" href="#letter" id="ref-for-letter-4">letters</a> belonging to all <a data-link-type="dfn" href="#clustered-scripts" id="ref-for-clustered-scripts-2">clustered scripts</a> are treated the same.
       For example, no distiction is made between
       the justification opportunity between a Han letter followed by another Han letter,
-      vs. the justification opportunity between a Han letter followed by a Hangul letter. 
+      vs. the justification opportunity between a Han letter followed by a Hangul letter.
      </ul>
      <p>Further information on text justification can be found in (or submitted to) <a href="https://www.w3.org/International/articles/typography/justification">“Approaches to Full Justification”</a>,
   which indexes by writing system and language,
@@ -1892,7 +1894,7 @@ that is indivisible with respect to a particular typographic operation
   The <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-6">word-spacing</a> property can now be specified in percentages,
   making it possible to, for example, double or eliminate word spacing. </p>
      <div class="example" id="example-ec6d45dc">
-      <a class="self-link" href="#example-ec6d45dc"></a> 
+      <a class="self-link" href="#example-ec6d45dc"></a>
       <p>In the following example, word spacing is halved,
     but may expand if needed for text justification. </p>
 <pre>p { word-spacing: -50%; }</pre>
@@ -1936,21 +1938,22 @@ that is indivisible with respect to a particular typographic operation
       Missing values are assumed to be <span class="css">word-spacing:normal</span>.
       Values are interpreted as defined below: </p>
      <dl>
-      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-normal">normal<a class="self-link" href="#valdef-word-spacing-normal"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-normal">normal<a class="self-link" href="#valdef-word-spacing-normal"></a></dfn>
       <dd>No additional spacing is applied.
-        Computes to zero. 
-      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-length">&lt;length><a class="self-link" href="#valdef-word-spacing-length"></a></dfn> 
-      <dd>Specifies extra spacing <em>in addition to</em> the intrinsic inter-word spacing defined by the font. 
-      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-percentage">&lt;percentage><a class="self-link" href="#valdef-word-spacing-percentage"></a></dfn> 
+        Computes to zero.
+      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-length">&lt;length><a class="self-link" href="#valdef-word-spacing-length"></a></dfn>
+      <dd>Specifies extra spacing <em>in addition to</em> the intrinsic inter-word spacing defined by the font.
+      <dt><dfn class="css" data-dfn-for="word-spacing" data-dfn-type="value" data-export="" id="valdef-word-spacing-percentage">&lt;percentage><a class="self-link" href="#valdef-word-spacing-percentage"></a></dfn>
       <dd>Specifies the additional spacing as a percentage of the affected
-        character’s advance width. 
+        character’s advance width.
      </dl>
      <p>Additional spacing is applied to each <a data-link-type="dfn" href="#word-separator" id="ref-for-word-separator-7">word separator</a> left in the text after the <a href="#white-space-rules">white space processing rules</a> have been applied,
     and should be applied half on each side of the character
     unless otherwise dictated by typographic tradition.
     Values may be negative, but there may be implementation-dependent limits. </p>
+    <p class="note ynote">在 word 之间添加空白。在处理完空白（主要是 word-space）之后，在 word separator 前后各添加一半的空白。可以是负值。</p>
      <div class="example" id="example-1aa9935f">
-      <a class="self-link" href="#example-1aa9935f"></a> 
+      <a class="self-link" href="#example-1aa9935f"></a>
       <p>The following example will make all the spaces between words in Arabic
     be rendered as zero-width, and double the width of each space in English: </p>
 <pre>:lang(ar) { word-spacing: -100%; }:lang(en) { word-spacing: 100%; }</pre>
@@ -1963,11 +1966,14 @@ that is indivisible with respect to a particular typographic operation
       the space (U+0020), the no-break space (U+00A0), the Ethiopic word space (U+1361),
       the Aegean word separators (U+10100,U+10101), the Ugaritic word divider (U+1039F),
       and the Phoenician Word Separator (U+1091F). </p>
+    <p class="note ynote">word separator 一般是空格。</p>
      <p>If there are no word-separator characters, or if a word-separating
       character has a zero advance width (such as the zero width space U+200B)
       then the user agent must not create an additional spacing between words.</p>
+    <p class="note ynote">如果没有 word separator 则不添加空白。</p>
      <p>General punctuation and fixed-width spaces (such as U+3000 and U+2000
       through U+200A) are not considered word-separator characters.</p>
+    <p class="note ynote">标点不是 word separator。</p>
      <p></p>
      <h3 class="heading settled" data-level="8.2" id="letter-spacing-property"><span class="secno">8.2. </span><span class="content"> Tracking: the <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-6">letter-spacing</a> property</span><a class="self-link" href="#letter-spacing-property"></a></h3>
      <table class="def propdef" data-link-for-hint="letter-spacing">
@@ -2008,19 +2014,22 @@ that is indivisible with respect to a particular typographic operation
   Letter-spacing is applied after <a href="https://www.w3.org/TR/css3-writing-modes/#text-direction">bidi reordering</a> and is in addition to any <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-8">word-spacing</a>.
   Depending on the justification rules in effect,
   user agents may further increase or decrease the space between <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-30">typographic character units</a> in order to <a href="#text-justify-property">justify text</a>. </p>
+     <p class="note ynote">在字符之间添加空白。在 word-spacing 等之后添加。text-justify 会影响最后效果。</p>
      <p>Values have the following meanings: </p>
      <dl>
-      <dt><dfn class="css" data-dfn-for="letter-spacing" data-dfn-type="value" data-export="" id="valdef-letter-spacing-normal">normal<a class="self-link" href="#valdef-letter-spacing-normal"></a></dfn> 
-      <dd>No additional spacing is applied. Computes to zero. 
-      <dt><dfn class="css" data-dfn-for="letter-spacing" data-dfn-type="value" data-export="" id="valdef-letter-spacing-length">&lt;length><a class="self-link" href="#valdef-letter-spacing-length"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="letter-spacing" data-dfn-type="value" data-export="" id="valdef-letter-spacing-normal">normal<a class="self-link" href="#valdef-letter-spacing-normal"></a></dfn>
+      <dd>No additional spacing is applied. Computes to zero.
+      <dt><dfn class="css" data-dfn-for="letter-spacing" data-dfn-type="value" data-export="" id="valdef-letter-spacing-length">&lt;length><a class="self-link" href="#valdef-letter-spacing-length"></a></dfn>
       <dd>Specifies <em>additional</em> spacing between <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-31">typographic character units</a>.
-        Values may be negative, but there may be implementation-dependent limits. 
+        Values may be negative, but there may be implementation-dependent limits.
+        <p class="note ynote">可以是负值。</p>
      </dl>
      <p>For the purpose of <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-7">letter-spacing</a>, each consecutive run of atomic
       inlines (such as images and inline blocks) is treated as a single <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-32">typographic character unit</a>. </p>
      <p>Letter-spacing must not be applied at the beginning or at the end of a line. </p>
+     <p class="note ynote">空白不会添加到行首和行尾。</p>
      <div class="example" id="example-1fffb4a3">
-      <a class="self-link" href="#example-1fffb4a3"></a> 
+      <a class="self-link" href="#example-1fffb4a3"></a>
       <p>Because letter-spacing is not applied at the beginning or end of a line,
     text always fits flush with the edge of the block. </p>
 <pre>p    { letter-spacing: 1em; }
@@ -2036,8 +2045,9 @@ that is indivisible with respect to a particular typographic operation
       the total letter spacing between two adjacent <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-35">typographic character units</a> (after bidi reordering)
       is specified by and rendered within
       the innermost element that <em>contains</em> the boundary between the two <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-36">typographic character units</a>. </p>
+      <p class="note ynote">空白添加到两个字符之间，如果只有一个字符则不会添加。</p>
      <div class="example" id="example-c8bdfa99">
-      <a class="self-link" href="#example-c8bdfa99"></a> 
+      <a class="self-link" href="#example-c8bdfa99"></a>
       <p>A given value of <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-8">letter-spacing</a> only affects the spacing
     between characters completely contained within the element for which it is specified: </p>
 <pre>p    { letter-spacing: 1em; }
@@ -2094,31 +2104,31 @@ span { letter-spacing: 2em; }
     Both cases will result in an effective spacing of zero between such letters;
     however the former will preserve the sense of stretching out the text. </p>
      <div class="example" id="example-f7608ccd">
-      <a class="self-link" href="#example-f7608ccd"></a> 
+      <a class="self-link" href="#example-f7608ccd"></a>
       <p>Below are some appropriate and inappropriate examples of spacing out Arabic text. </p>
       <table class="data">
        <thead>
         <tr>
-         <td><img alt="" src="images/arabic-stretch-original.png"> 
-         <td>— 
-         <td>Original text 
+         <td><img alt="" src="images/arabic-stretch-original.png">
+         <td>—
+         <td>Original text
        <tbody>
         <tr>
-         <td><img alt="" src="images/arabic-stretch-spaced.png"> 
-         <td class="no">BAD 
-         <th>Even distribution of space between each letter. <em>Notice this breaks cursive joins!</em> 
+         <td><img alt="" src="images/arabic-stretch-spaced.png">
+         <td class="no">BAD
+         <th>Even distribution of space between each letter. <em>Notice this breaks cursive joins!</em>
         <tr>
-         <td><img alt="" src="images/arabic-stretch-kashida.png"> 
-         <td class="ok">OK 
-         <th>Distributing ∑<var>letter-spacing</var> by typographically-appropriate cursive elongation. <em>The resulting text is as long as the previous evenly-spaced example.</em> 
+         <td><img alt="" src="images/arabic-stretch-kashida.png">
+         <td class="ok">OK
+         <th>Distributing ∑<var>letter-spacing</var> by typographically-appropriate cursive elongation. <em>The resulting text is as long as the previous evenly-spaced example.</em>
         <tr>
-         <td><img alt="" src="images/arabic-stretch-suppressed.png"> 
-         <td class="ok">OK 
-         <th>Suppressing <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-12">letter-spacing</a> between Arabic letters. <em>Notice <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-13">letter-spacing</a> is nonetheless applied to non-Arabic characters (like spaces).</em> 
+         <td><img alt="" src="images/arabic-stretch-suppressed.png">
+         <td class="ok">OK
+         <th>Suppressing <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-12">letter-spacing</a> between Arabic letters. <em>Notice <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-13">letter-spacing</a> is nonetheless applied to non-Arabic characters (like spaces).</em>
         <tr>
-         <td><img alt="" src="images/arabic-stretch-unjoined.png"> 
-         <td class="no">BAD 
-         <th>Applying <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-14">letter-spacing</a> only between non-joined letters. <em>This distorts typographic color and obfuscates word boundaries.</em> 
+         <td><img alt="" src="images/arabic-stretch-unjoined.png">
+         <td class="no">BAD
+         <th>Applying <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-14">letter-spacing</a> only between non-joined letters. <em>This distorts typographic color and obfuscates word boundaries.</em>
       </table>
      </div>
      <div class="note" role="note"> Note that proper cursive elongation or compression of a text
@@ -2198,19 +2208,19 @@ is non-zero.</p>
       if it is the first child of its parent element. </p>
      <p>Values have the following meanings:</p>
      <dl>
-      <dt><dfn class="css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-length">&lt;length><a class="self-link" href="#valdef-text-indent-length"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-length">&lt;length><a class="self-link" href="#valdef-text-indent-length"></a></dfn>
       <dd>Gives the amount of the indent as an absolute length.
-      <dt><dfn class="css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-percentage">&lt;percentage><a class="self-link" href="#valdef-text-indent-percentage"></a></dfn> 
+      <dt><dfn class="css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-percentage">&lt;percentage><a class="self-link" href="#valdef-text-indent-percentage"></a></dfn>
       <dd>Gives the amount of the indent as a percentage of the containing
         block’s logical width.
-      <dt><dfn class="dfn-paneled css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-each-line">each-line</dfn> 
+      <dt><dfn class="dfn-paneled css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-each-line">each-line</dfn>
       <dd>Indentation affects the first line of each block container
-        and each line after a <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-7">forced line break</a> (but not lines after a <a data-link-type="dfn" href="#soft-wrap-break" id="ref-for-soft-wrap-break-1">soft wrap break</a>). 
-      <dt><dfn class="dfn-paneled css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-hanging">hanging</dfn> 
+        and each line after a <a data-link-type="dfn" href="#forced-line-break" id="ref-for-forced-line-break-7">forced line break</a> (but not lines after a <a data-link-type="dfn" href="#soft-wrap-break" id="ref-for-soft-wrap-break-1">soft wrap break</a>).
+      <dt><dfn class="dfn-paneled css" data-dfn-for="text-indent" data-dfn-type="value" data-export="" id="valdef-text-indent-hanging">hanging</dfn>
       <dd>Inverts which lines are affected.
      </dl>
      <div class="example" id="example-6fc27d9f">
-      <a class="self-link" href="#example-6fc27d9f"></a> 
+      <a class="self-link" href="#example-6fc27d9f"></a>
       <p>If <a class="property" data-link-type="propdesc" href="#propdef-text-align" id="ref-for-propdef-text-align-10">text-align</a> is <a class="css" data-link-type="maybe" href="#valdef-text-align-start" id="ref-for-valdef-text-align-start-4">start</a> and <a class="property" data-link-type="propdesc" href="#propdef-text-indent" id="ref-for-propdef-text-indent-3">text-indent</a> is <span class="css">5em</span> in
       left-to-right text with no floats present, then first line of text
       will start 5em into the block:</p>
@@ -2229,7 +2239,7 @@ to '5em'.
 </pre>
      </div>
      <div class="example" id="example-e622c9fb">
-      <a class="self-link" href="#example-e622c9fb"></a> 
+      <a class="self-link" href="#example-e622c9fb"></a>
       <p>Since the <a class="property" data-link-type="propdesc" href="#propdef-text-indent" id="ref-for-propdef-text-indent-4">text-indent</a> property only affects the “first formatted line”,
       a line after a forced break will not be indented. </p>
 <pre class="output">   For example, in the middle of
@@ -2309,12 +2319,12 @@ Can help us stay on the page.
       <dd>An opening bracket or quote at the start of the <a href="https://www.w3.org/TR/CSS21/selector.html#first-line-pseudo">first
           formatted line</a> of an element <a data-link-type="dfn" href="#hang" id="ref-for-hang-7">hangs</a>.
           This applies to all characters in the Unicode categories Ps, Pf, Pi
-          plus the ASCII quote marks “'” U+0027 and “"” U+0022. 
+          plus the ASCII quote marks “'” U+0027 and “"” U+0022.
       <dt><dfn class="css" data-dfn-for="hanging-punctuation" data-dfn-type="value" data-export="" id="valdef-hanging-punctuation-last">last<a class="self-link" href="#valdef-hanging-punctuation-last"></a></dfn>
       <dd>A closing bracket or quote at the end of the
           last formatted line of an element <a data-link-type="dfn" href="#hang" id="ref-for-hang-8">hangs</a>.
           This applies to all characters in the Unicode categories Pe, Pf, Pi
-          plus the ASCII quote marks “'” U+0027 and “"” U+0022. 
+          plus the ASCII quote marks “'” U+0027 and “"” U+0022.
       <dt><dfn class="dfn-paneled css" data-dfn-for="hanging-punctuation" data-dfn-type="value" data-export="" id="valdef-hanging-punctuation-force-end">force-end</dfn>
       <dd>A <a data-link-type="dfn" href="#stop-or-comma" id="ref-for-stop-or-comma-1">stop or comma</a> at the end of a line <a data-link-type="dfn" href="#hang" id="ref-for-hang-9">hangs</a>.
       <dt><dfn class="dfn-paneled css" data-dfn-for="hanging-punctuation" data-dfn-type="value" data-export="" id="valdef-hanging-punctuation-allow-end">allow-end</dfn>
@@ -2336,63 +2346,63 @@ Can help us stay on the page.
      <table class="data">
       <tbody>
        <tr>
-        <td>U+002C 
-        <td>, 
-        <td>COMMA 
+        <td>U+002C
+        <td>,
+        <td>COMMA
        <tr>
-        <td>U+002E 
-        <td>. 
-        <td>FULL STOP 
+        <td>U+002E
+        <td>.
+        <td>FULL STOP
        <tr>
-        <td>U+060C 
-        <td>، 
-        <td>ARABIC COMMA 
+        <td>U+060C
+        <td>،
+        <td>ARABIC COMMA
        <tr>
-        <td>U+06D4 
-        <td>۔ 
-        <td>ARABIC FULL STOP 
+        <td>U+06D4
+        <td>۔
+        <td>ARABIC FULL STOP
        <tr>
-        <td>U+3001 
-        <td>、 
-        <td>IDEOGRAPHIC COMMA 
+        <td>U+3001
+        <td>、
+        <td>IDEOGRAPHIC COMMA
        <tr>
-        <td>U+3002 
-        <td>。 
-        <td>IDEOGRAPHIC FULL STOP 
+        <td>U+3002
+        <td>。
+        <td>IDEOGRAPHIC FULL STOP
        <tr>
-        <td>U+FF0C 
-        <td>， 
-        <td>FULLWIDTH COMMA 
+        <td>U+FF0C
+        <td>，
+        <td>FULLWIDTH COMMA
        <tr>
-        <td>U+FF0E 
-        <td>． 
-        <td>FULLWIDTH FULL STOP 
+        <td>U+FF0E
+        <td>．
+        <td>FULLWIDTH FULL STOP
        <tr>
-        <td>U+FE50 
-        <td>﹐ 
-        <td>SMALL COMMA 
+        <td>U+FE50
+        <td>﹐
+        <td>SMALL COMMA
        <tr>
-        <td>U+FE51 
-        <td>﹑ 
-        <td>SMALL IDEOGRAPHIC COMMA 
+        <td>U+FE51
+        <td>﹑
+        <td>SMALL IDEOGRAPHIC COMMA
        <tr>
-        <td>U+FE52 
-        <td>﹒ 
-        <td>SMALL FULL STOP 
+        <td>U+FE52
+        <td>﹒
+        <td>SMALL FULL STOP
        <tr>
-        <td>U+FF61 
-        <td>｡ 
-        <td>HALFWIDTH IDEOGRAPHIC FULL STOP 
+        <td>U+FF61
+        <td>｡
+        <td>HALFWIDTH IDEOGRAPHIC FULL STOP
        <tr>
-        <td>U+FF64 
-        <td>､ 
-        <td>HALFWIDTH IDEOGRAPHIC COMMA 
+        <td>U+FF64
+        <td>､
+        <td>HALFWIDTH IDEOGRAPHIC COMMA
      </table>
      <p>The UA may include other characters as appropriate. </p>
      <p class="note" role="note">The CSS Working Group would appreciate if UAs including
       other characters would <a href="#status">inform the working group</a> of such additions.</p>
      <div class="example" id="example-e55467e1">
-      <a class="self-link" href="#example-e55467e1"></a> 
+      <a class="self-link" href="#example-e55467e1"></a>
       <p>The <a class="css" data-link-type="maybe" href="#valdef-hanging-punctuation-allow-end" id="ref-for-valdef-hanging-punctuation-allow-end-1">allow-end</a> and <a class="css" data-link-type="maybe" href="#valdef-hanging-punctuation-force-end" id="ref-for-valdef-hanging-punctuation-force-end-1">force-end</a> are two variations of
         hanging punctuation used in East Asia.</p>
       <div>
@@ -2429,7 +2439,7 @@ Can help us stay on the page.
     if this is the first line box in the containing block,
     then from the <a class="property" data-link-type="propdesc" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">direction</a> property of the containing block. </p>
      <div class="example" id="example-a0415392">
-      <a class="self-link" href="#example-a0415392"></a> 
+      <a class="self-link" href="#example-a0415392"></a>
       <p>In the following example, assuming the <code>&lt;block></code> is a preformatted block (<a class="css" data-link-type="propdesc" href="https://drafts.csswg.org/css-display-3/#propdef-display">display: block; white-space: pre</a>) inheriting <a class="css" data-link-type="propdesc" href="#propdef-text-align" id="ref-for-propdef-text-align-11">text-align: start</a>, every other line is right-aligned:</p>
 <pre>&lt;block style="unicode-bidi: plaintext">  Latin
   و·کمی
@@ -2445,7 +2455,7 @@ Can help us stay on the page.
     i.e. the position and alignment of its contents with respect to its edges.
     It does not affect the formatting or ordering of its content. </p>
      <div class="example" id="example-1a9e5bc1">
-      <a class="self-link" href="#example-1a9e5bc1"></a> 
+      <a class="self-link" href="#example-1a9e5bc1"></a>
       <p>In the following example: </p>
 <pre>&lt;para style="display: block; direction: rtl; unicode-bidi:plaintext">
 &lt;quote style="unicode-bidi:plaintext">שלום!&lt;/quote>", he said.
@@ -2468,7 +2478,7 @@ Can help us stay on the page.
       of the "he" following it. </p>
      </div>
      <div class="example" id="example-cb3d3202">
-      <a class="self-link" href="#example-cb3d3202"></a> 
+      <a class="self-link" href="#example-cb3d3202"></a>
 <pre>&lt;fieldset style="direction: rtl">
 &lt;textarea style="unicode-bidi:plaintext">
 Hello!
@@ -2489,29 +2499,29 @@ Text Processing Order of Operations</span><a class="self-link" href="#order"></a
      <p>The following list defines the order of text operations.
   (Implementations are not bound to this order as long as the resulting layout is the same.) </p>
      <ol>
-      <li><a href="#white-space-phase-1">white space processing</a> part I (pre-wrapping) 
-      <li><a href="#transforming">text transformation</a> 
-      <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-combine-horizontal">text combination</a> 
-      <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-orientation">text orientation</a> <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
+      <li><a href="#white-space-phase-1">white space processing</a> part I (pre-wrapping)
+      <li><a href="#transforming">text transformation</a>
+      <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-combine-horizontal">text combination</a>
+      <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-orientation">text orientation</a> <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a>
       <li>
-       <a href="#wrapping" id="ref-for-wrapping-6">text wrapping</a> while applying per line: 
+       <a href="#wrapping" id="ref-for-wrapping-6">text wrapping</a> while applying per line:
        <ul>
-        <li><a href="#text-indent-property">indentation</a> 
-        <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-direction">bidirectional reordering</a> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> / <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
-        <li><a href="#white-space-phase-2">white space processing</a> part II 
-        <li><a href="https://www.w3.org/TR/css3-fonts/">font/glyph selection and positioning</a> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> / <a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a> 
-        <li><a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-16">letter-spacing</a> and <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-9">word-spacing</a> 
-        <li><a href="#hanging-punctuation-property">hanging punctuation</a> 
+        <li><a href="#text-indent-property">indentation</a>
+        <li><a href="https://www.w3.org/TR/css3-writing-modes/#text-direction">bidirectional reordering</a> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> / <a data-link-type="biblio" href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a>
+        <li><a href="#white-space-phase-2">white space processing</a> part II
+        <li><a href="https://www.w3.org/TR/css3-fonts/">font/glyph selection and positioning</a> <a data-link-type="biblio" href="#biblio-css21">[CSS21]</a> / <a data-link-type="biblio" href="#biblio-css3-fonts">[CSS3-FONTS]</a>
+        <li><a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-16">letter-spacing</a> and <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-9">word-spacing</a>
+        <li><a href="#hanging-punctuation-property">hanging punctuation</a>
        </ul>
-      <li><a href="#justification">justification</a> (which may affect glyph selection and/or text wrapping, looping back into that step) 
-      <li><a href="#text-align-property">text alignment</a> 
+      <li><a href="#justification">justification</a> (which may affect glyph selection and/or text wrapping, looping back into that step)
+      <li><a href="#text-align-property">text alignment</a>
      </ol>
      <h2 class="no-num heading settled" id="default-stylesheet"><span class="content"> Appendix B: Default UA Stylesheet</span><a class="self-link" href="#default-stylesheet"></a></h2>
      <p>This appendix is informative,
   and is to help UA developers to implement a default stylesheet for HTML,
   but UA developers are free to ignore or modify as appropriate. </p>
      <div class="example" id="example-ae6ef8c0">
-      <a class="self-link" href="#example-ae6ef8c0"></a> 
+      <a class="self-link" href="#example-ae6ef8c0"></a>
 <pre>/* make list items and option elements align together */
 li, option { text-align: match-parent; }</pre>
      </div>
@@ -2530,7 +2540,7 @@ li, option { text-align: match-parent; }</pre>
   	  The following <a data-link-type="dfn" href="#unicode-script" id="ref-for-unicode-script-3">Unicode scripts</a> are included:
       Bopomofo, Han, Hangul, Hiragana, Katakana, and Yi.
   	  Characters of the <a data-link-type="dfn" href="#unicode-east-asian-width" id="ref-for-unicode-east-asian-width-4">East Asian Width property</a> <code>W</code> and <code>F</code> are also included,
-  	  but <code>A</code> characters are included only if the <a data-link-type="dfn" href="#content-language" id="ref-for-content-language-12">content language</a> is Chinese, Korean, or Japanese. 
+  	  but <code>A</code> characters are included only if the <a data-link-type="dfn" href="#content-language" id="ref-for-content-language-12">content language</a> is Chinese, Korean, or Japanese.
       <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="clustered-scripts">clustered scripts</dfn>
       <dd>Clustered scripts have discrete units
       and break only at word boundaries,
@@ -2545,8 +2555,8 @@ li, option { text-align: match-parent; }</pre>
       Tai Le,
       Tai Tham,
       Tai Viet,
-      Thai 
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="cursive script" data-noexport="" id="cursive-script">cursive scripts</dfn> 
+      Thai
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="cursive script" data-noexport="" id="cursive-script">cursive scripts</dfn>
       <dd>Cursive scripts do not admit gaps between their letters for either justification or <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-17">letter-spacing</a>.
       The following <a data-link-type="dfn" href="#unicode-script" id="ref-for-unicode-script-5">Unicode scripts</a> are included:
       Arabic,
@@ -2554,7 +2564,7 @@ li, option { text-align: match-parent; }</pre>
       Mongolian,
       N’Ko,
       Phags Pa,
-      Syriac 
+      Syriac
      </dl>
      <p>User agents should update this list as they update their Unicode support
     to handle as-yet-unencoded cursive scripts in future versions of Unicode,
@@ -2567,19 +2577,19 @@ Characters and Properties</span><a class="self-link" href="#character-properties
      <p>Unicode defines four codepoint-level properties that are referenced
     in CSS typesetting: </p>
      <dl>
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode East Asian Width|East Asian Width property" id="unicode-east-asian-width"><a href="http://www.unicode.org/reports/tr11/#Definitions">East Asian width property</a></dfn> 
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode East Asian Width|East Asian Width property" id="unicode-east-asian-width"><a href="http://www.unicode.org/reports/tr11/#Definitions">East Asian width property</a></dfn>
       <dd>Defined in <a data-link-type="biblio" href="#biblio-uax11">[UAX11]</a> and given as the <code>East_Asian_Width</code> property
-      in the Unicode Character Database <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a>. 
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode General Category|Unicode category|General Category" id="unicode-general-category"><a href="http://www.unicode.org/reports/tr44/#General_Category_Values">general category</a></dfn> 
+      in the Unicode Character Database <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a>.
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode General Category|Unicode category|General Category" id="unicode-general-category"><a href="http://www.unicode.org/reports/tr44/#General_Category_Values">general category</a></dfn>
       <dd>Defined in <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a> and given as the <code>General_Category</code> property
-      in the Unicode Character Database <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a>. 
-      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode Script|Script property" id="unicode-script"><a href="http://www.unicode.org/reports/tr24/#Values">script property</a></dfn> 
+      in the Unicode Character Database <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a>.
+      <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" data-lt="Unicode Script|Script property" id="unicode-script"><a href="http://www.unicode.org/reports/tr24/#Values">script property</a></dfn>
       <dd>Defined in <a data-link-type="biblio" href="#biblio-uax24">[UAX24]</a> and given as the <code>Script</code> property
       in the Unicode Character Database <a data-link-type="biblio" href="#biblio-uax44">[UAX44]</a>.
-      (UAs must include any ScriptExtensions.txt assignments in this mapping.) 
-      <dt><a href="http://www.unicode.org/reports/tr50/">Vertical Orientation</a> 
+      (UAs must include any ScriptExtensions.txt assignments in this mapping.)
+      <dt><a href="http://www.unicode.org/reports/tr50/">Vertical Orientation</a>
       <dd>Defined in <a data-link-type="biblio" href="#biblio-utr50">[UTR50]</a> as the Vertical_Orientation property
-      and given in the UTR50 data file. 
+      and given in the UTR50 data file.
      </dl>
      <p>Unicode defines properties for individual codepoints, but sometimes
     it is necessary to determine the properties of a <a data-link-type="dfn" href="#typographic-character-unit" id="ref-for-typographic-character-unit-39">typographic character unit</a>.
@@ -2589,11 +2599,11 @@ Characters and Properties</span><a class="self-link" href="#character-properties
      <ul>
       <li><a data-link-type="dfn" href="#grapheme-cluster" id="ref-for-grapheme-cluster-6">Grapheme clusters</a> formed with an Enclosing Mark (<code>Me</code>) of the Common script
     are considered to be Other Symbols (<code>So</code>) in the Common script.
-    They are assumed to have the same Unicode properties as the Replacement Character U+FFFD. 
+    They are assumed to have the same Unicode properties as the Replacement Character U+FFFD.
       <li>Grapheme clusters formed with a Space Separator (<code>Zs</code>) as the base
     are considered to be Modifier Symbols (<code>Sk</code>).
     They are assumed to have the same East Asian Width property as the base,
-    but take their other properties from the first combining character in the sequence. 
+    but take their other properties from the first combining character in the sequence.
      </ul>
      <h2 class="no-num heading settled" id="priv-sec"><span class="content"> Privacy and Security Considerations</span><a class="self-link" href="#priv-sec"></a></h2>
      <p>This specification introduces no new security considerations.</p>
@@ -2615,13 +2625,13 @@ Characters and Properties</span><a class="self-link" href="#character-properties
   2013 CSS3 Text <abbr title="Last Call Working Draft">LCWD</abbr></a></span><a class="self-link" href="#recent-changes"></a></h3>
      <ul>
       <li>Switched <a class="property" data-link-type="propdesc" href="#propdef-tab-size" id="ref-for-propdef-tab-size-3">tab-size</a> to use <a class="production css" data-link-type="type" href="https://drafts.csswg.org/css-values-3/#number-value">&lt;number></a> so that it is animatable,
-        and defined it to also account for <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-18">letter-spacing</a> and <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-10">word-spacing</a>. 
-      <li>Made <a class="property" data-link-type="propdesc" href="#propdef-text-align" id="ref-for-propdef-text-align-13">text-align</a> a shorthand of <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-11">text-align-last</a> and the new <a class="property" data-link-type="propdesc" href="#propdef-text-align-all" id="ref-for-propdef-text-align-all-4">text-align-all</a> property. 
+        and defined it to also account for <a class="property" data-link-type="propdesc" href="#propdef-letter-spacing" id="ref-for-propdef-letter-spacing-18">letter-spacing</a> and <a class="property" data-link-type="propdesc" href="#propdef-word-spacing" id="ref-for-propdef-word-spacing-10">word-spacing</a>.
+      <li>Made <a class="property" data-link-type="propdesc" href="#propdef-text-align" id="ref-for-propdef-text-align-13">text-align</a> a shorthand of <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-11">text-align-last</a> and the new <a class="property" data-link-type="propdesc" href="#propdef-text-align-all" id="ref-for-propdef-text-align-all-4">text-align-all</a> property.
       <li>Removed dependence of <a class="property" data-link-type="propdesc" href="#propdef-text-align-last" id="ref-for-propdef-text-align-last-12">text-align-last</a> on <a class="css" data-link-type="propdesc" href="#propdef-text-align" id="ref-for-propdef-text-align-14">text-align: justify</a>,
-        since the problem it solves is now solved by the shorthanding relationship. 
-      <li>Qualified that only lowercase letters are titlecased for <a class="css" data-link-type="propdesc" href="#propdef-text-transform" id="ref-for-propdef-text-transform-2">text-transform: capitalize</a>; uppercase letters remain unaffected. 
+        since the problem it solves is now solved by the shorthanding relationship.
+      <li>Qualified that only lowercase letters are titlecased for <a class="css" data-link-type="propdesc" href="#propdef-text-transform" id="ref-for-propdef-text-transform-2">text-transform: capitalize</a>; uppercase letters remain unaffected.
       <li>For <a class="css" data-link-type="propdesc" href="#propdef-word-break" id="ref-for-propdef-word-break-11">word-break: break-all</a>, switched to UAX14 notion of “letters”,
-        since that handles symbols better. 
+        since that handles symbols better.
      </ul>
      <h3 class="no-num heading settled" id="changes-2013"><span class="content"> Changes from the <a href="https://www.w3.org/TR/2013/WD-css-text-3-20131010/">October
   2013 CSS3 Text <abbr title="Working Draft">LCWD</abbr></a></span><a class="self-link" href="#changes-2013"></a></h3>
@@ -2650,7 +2660,7 @@ Characters and Properties</span><a class="self-link" href="#character-properties
 	or are set apart from the normative text with <code>class="example"</code>,
 	like this: </p>
   <div class="example" id="example-52448c84">
-   <a class="self-link" href="#example-52448c84"></a> 
+   <a class="self-link" href="#example-52448c84"></a>
    <p>This is an example of an informative example. </p>
   </div>
   <p>Informative notes begin with the word “Note” and are set apart from the
@@ -2663,14 +2673,14 @@ Characters and Properties</span><a class="self-link" href="#character-properties
   <p>Conformance to this specification
 	is defined for three conformance classes: </p>
   <dl>
-   <dt>style sheet 
+   <dt>style sheet
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#style-sheet">CSS
-			style sheet</a>. 
-   <dt>renderer 
+			style sheet</a>.
+   <dt>renderer
    <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that interprets the semantics of a style sheet and renders
-			documents that use them. 
-   <dt>authoring tool 
-   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet. 
+			documents that use them.
+   <dt>authoring tool
+   <dd>A <a href="http://www.w3.org/TR/CSS2/conform.html#user-agent">UA</a> that writes a style sheet.
   </dl>
   <p>A style sheet is conformant to this specification
 	if all of its statements that use syntax defined in this module are valid
@@ -2721,7 +2731,7 @@ Characters and Properties</span><a class="self-link" href="#character-properties
   <p>
    Further information on submitting testcases and implementation reports
 		can be found from on the CSS Working Group’s website at <a href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a>.
-		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list. 
+		Questions should be directed to the <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> mailing list.
 <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
   </p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
@@ -2996,7 +3006,7 @@ Characters and Properties</span><a class="self-link" href="#character-properties
    <dt id="biblio-xml10">[XML10]
    <dd>Tim Bray; et al. <a href="https://www.w3.org/TR/xml">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a>. 26 November 2008. REC. URL: <a href="https://www.w3.org/TR/xml">https://www.w3.org/TR/xml</a>
    <dt id="biblio-zhmark">[ZHMARK]
-   <dd><cite>标点符号用法 (Punctuation Mark Usage).</cite> 1995. 中华人民共和国国家标准 
+   <dd><cite>标点符号用法 (Punctuation Mark Usage).</cite> 1995. 中华人民共和国国家标准
   </dl>
   <h2 class="no-num no-ref heading settled" id="property-index"><span class="content">Property Index</span><a class="self-link" href="#property-index"></a></h2>
   <div class="big-element-wrapper">
@@ -3215,38 +3225,38 @@ Characters and Properties</span><a class="self-link" href="#character-properties
   <aside class="dfn-panel" data-for="character">
    <b><a href="#character">#character</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-character-1">1.3.1. 
+    <li><a href="#ref-for-character-1">1.3.1.
 Characters and Letters</a> <a href="#ref-for-character-2">(2)</a> <a href="#ref-for-character-3">(3)</a> <a href="#ref-for-character-4">(4)</a> <a href="#ref-for-character-5">(5)</a> <a href="#ref-for-character-6">(6)</a> <a href="#ref-for-character-7">(7)</a> <a href="#ref-for-character-8">(8)</a> <a href="#ref-for-character-9">(9)</a> <a href="#ref-for-character-10">(10)</a> <a href="#ref-for-character-11">(11)</a>
-    <li><a href="#ref-for-character-12">6.2. 
+    <li><a href="#ref-for-character-12">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="typographic-character-unit">
    <b><a href="#typographic-character-unit">#typographic-character-unit</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typographic-character-unit-1">1.3.1. 
+    <li><a href="#ref-for-typographic-character-unit-1">1.3.1.
 Characters and Letters</a> <a href="#ref-for-typographic-character-unit-2">(2)</a> <a href="#ref-for-typographic-character-unit-3">(3)</a> <a href="#ref-for-typographic-character-unit-4">(4)</a> <a href="#ref-for-typographic-character-unit-5">(5)</a> <a href="#ref-for-typographic-character-unit-6">(6)</a> <a href="#ref-for-typographic-character-unit-7">(7)</a> <a href="#ref-for-typographic-character-unit-8">(8)</a> <a href="#ref-for-typographic-character-unit-9">(9)</a> <a href="#ref-for-typographic-character-unit-10">(10)</a>
-    <li><a href="#ref-for-typographic-character-unit-11">2.1. 
-    
-    
+    <li><a href="#ref-for-typographic-character-unit-11">2.1.
+
+
     Case Transforms: the text-transform property</a>
-    <li><a href="#ref-for-typographic-character-unit-12">5.2. 
+    <li><a href="#ref-for-typographic-character-unit-12">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-typographic-character-unit-13">(2)</a>
-    <li><a href="#ref-for-typographic-character-unit-14">7.4. 
+    <li><a href="#ref-for-typographic-character-unit-14">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-typographic-character-unit-15">7.4.1. 
+    <li><a href="#ref-for-typographic-character-unit-15">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-typographic-character-unit-16">(2)</a> <a href="#ref-for-typographic-character-unit-17">(3)</a> <a href="#ref-for-typographic-character-unit-18">(4)</a> <a href="#ref-for-typographic-character-unit-19">(5)</a> <a href="#ref-for-typographic-character-unit-20">(6)</a> <a href="#ref-for-typographic-character-unit-21">(7)</a>
-    <li><a href="#ref-for-typographic-character-unit-22">7.4.2. 
+    <li><a href="#ref-for-typographic-character-unit-22">7.4.2.
 Handling Symbols and Punctuation</a>
-    <li><a href="#ref-for-typographic-character-unit-23">7.4.5. 
+    <li><a href="#ref-for-typographic-character-unit-23">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-typographic-character-unit-24">(2)</a> <a href="#ref-for-typographic-character-unit-25">(3)</a> <a href="#ref-for-typographic-character-unit-26">(4)</a>
-    <li><a href="#ref-for-typographic-character-unit-27">8. 
+    <li><a href="#ref-for-typographic-character-unit-27">8.
   Spacing</a>
-    <li><a href="#ref-for-typographic-character-unit-28">8.1. 
+    <li><a href="#ref-for-typographic-character-unit-28">8.1.
 Word Spacing: the word-spacing property</a>
-    <li><a href="#ref-for-typographic-character-unit-29">8.2. 
+    <li><a href="#ref-for-typographic-character-unit-29">8.2.
     Tracking: the letter-spacing property</a> <a href="#ref-for-typographic-character-unit-30">(2)</a> <a href="#ref-for-typographic-character-unit-31">(3)</a> <a href="#ref-for-typographic-character-unit-32">(4)</a> <a href="#ref-for-typographic-character-unit-33">(5)</a> <a href="#ref-for-typographic-character-unit-34">(6)</a> <a href="#ref-for-typographic-character-unit-35">(7)</a> <a href="#ref-for-typographic-character-unit-36">(8)</a>
-    <li><a href="#ref-for-typographic-character-unit-37">8.3. 
+    <li><a href="#ref-for-typographic-character-unit-37">8.3.
   Shaping Across Element Boundaries</a> <a href="#ref-for-typographic-character-unit-38">(2)</a>
     <li><a href="#ref-for-typographic-character-unit-39">Appendix D.
 Characters and Properties</a> <a href="#ref-for-typographic-character-unit-40">(2)</a>
@@ -3255,7 +3265,7 @@ Characters and Properties</a> <a href="#ref-for-typographic-character-unit-40">(
   <aside class="dfn-panel" data-for="grapheme-cluster">
    <b><a href="#grapheme-cluster">#grapheme-cluster</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-grapheme-cluster-1">1.3.1. 
+    <li><a href="#ref-for-grapheme-cluster-1">1.3.1.
 Characters and Letters</a> <a href="#ref-for-grapheme-cluster-2">(2)</a> <a href="#ref-for-grapheme-cluster-3">(3)</a> <a href="#ref-for-grapheme-cluster-4">(4)</a>
     <li><a href="#ref-for-grapheme-cluster-5">Appendix D.
 Characters and Properties</a> <a href="#ref-for-grapheme-cluster-6">(2)</a>
@@ -3264,48 +3274,48 @@ Characters and Properties</a> <a href="#ref-for-grapheme-cluster-6">(2)</a>
   <aside class="dfn-panel" data-for="typographic-letter-unit">
    <b><a href="#typographic-letter-unit">#typographic-letter-unit</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-typographic-letter-unit-1">2.1. 
-    
-    
+    <li><a href="#ref-for-typographic-letter-unit-1">2.1.
+
+
     Case Transforms: the text-transform property</a>
-    <li><a href="#ref-for-typographic-letter-unit-2">5.2. 
+    <li><a href="#ref-for-typographic-letter-unit-2">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-typographic-letter-unit-3">(2)</a>
-    <li><a href="#ref-for-typographic-letter-unit-4">7.4. 
+    <li><a href="#ref-for-typographic-letter-unit-4">7.4.
     Justification Method: the text-justify property</a> <a href="#ref-for-typographic-letter-unit-5">(2)</a>
-    <li><a href="#ref-for-typographic-letter-unit-6">7.4.2. 
+    <li><a href="#ref-for-typographic-letter-unit-6">7.4.2.
 Handling Symbols and Punctuation</a> <a href="#ref-for-typographic-letter-unit-7">(2)</a>
-    <li><a href="#ref-for-typographic-letter-unit-8">7.4.4. 
+    <li><a href="#ref-for-typographic-letter-unit-8">7.4.4.
 Cursive Scripts</a> <a href="#ref-for-typographic-letter-unit-9">(2)</a> <a href="#ref-for-typographic-letter-unit-10">(3)</a>
-    <li><a href="#ref-for-typographic-letter-unit-11">8.2.1. 
+    <li><a href="#ref-for-typographic-letter-unit-11">8.2.1.
 Cursive Scripts</a> <a href="#ref-for-typographic-letter-unit-12">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="letter">
    <b><a href="#letter">#letter</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-letter-1">2.1. 
-    
-    
+    <li><a href="#ref-for-letter-1">2.1.
+
+
     Case Transforms: the text-transform property</a> <a href="#ref-for-letter-2">(2)</a>
-    <li><a href="#ref-for-letter-3">7.4.5. 
+    <li><a href="#ref-for-letter-3">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-letter-4">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="content-language">
    <b><a href="#content-language">#content-language</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-content-language-1">1.3.2. 
+    <li><a href="#ref-for-content-language-1">1.3.2.
 Languages and Typesetting</a> <a href="#ref-for-content-language-2">(2)</a> <a href="#ref-for-content-language-3">(3)</a>
-    <li><a href="#ref-for-content-language-4">2.1. 
-    
-    
+    <li><a href="#ref-for-content-language-4">2.1.
+
+
     Case Transforms: the text-transform property</a> <a href="#ref-for-content-language-5">(2)</a>
-    <li><a href="#ref-for-content-language-6">5.3. 
+    <li><a href="#ref-for-content-language-6">5.3.
     Breaking Rules for Punctuation: the line-break property</a> <a href="#ref-for-content-language-7">(2)</a>
     <li><a href="#ref-for-content-language-8">6.1. Hyphenation Control: the hyphens property</a> <a href="#ref-for-content-language-9">(2)</a>
-    <li><a href="#ref-for-content-language-10">7.4. 
+    <li><a href="#ref-for-content-language-10">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-content-language-11">7.4.5. 
+    <li><a href="#ref-for-content-language-11">7.4.5.
 Minimum Requirements for auto Justification</a>
     <li><a href="#ref-for-content-language-12"> Appendix C: Scripts and Spacing</a>
    </ul>
@@ -3313,9 +3323,9 @@ Minimum Requirements for auto Justification</a>
   <aside class="dfn-panel" data-for="propdef-text-transform">
    <b><a href="#propdef-text-transform">#propdef-text-transform</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-transform-1">2.1. 
-    
-    
+    <li><a href="#ref-for-propdef-text-transform-1">2.1.
+
+
     Case Transforms: the text-transform property</a>
     <li><a href="#ref-for-propdef-text-transform-2"> Changes from the October
   2013 CSS3 Text LCWD</a>
@@ -3324,44 +3334,44 @@ Minimum Requirements for auto Justification</a>
   <aside class="dfn-panel" data-for="valdef-text-transform-capitalize">
    <b><a href="#valdef-text-transform-capitalize">#valdef-text-transform-capitalize</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-transform-capitalize-1">2.1. 
-    
-    
+    <li><a href="#ref-for-valdef-text-transform-capitalize-1">2.1.
+
+
     Case Transforms: the text-transform property</a> <a href="#ref-for-valdef-text-transform-capitalize-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-transform-full-width">
    <b><a href="#valdef-text-transform-full-width">#valdef-text-transform-full-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-transform-full-width-1">2.1. 
-    
-    
+    <li><a href="#ref-for-valdef-text-transform-full-width-1">2.1.
+
+
     Case Transforms: the text-transform property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-white-space">
    <b><a href="#propdef-white-space">#propdef-white-space</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-white-space-1">3. 
-  
+    <li><a href="#ref-for-propdef-white-space-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-propdef-white-space-2">(2)</a>
-    <li><a href="#ref-for-propdef-white-space-3">4. 
+    <li><a href="#ref-for-propdef-white-space-3">4.
   White Space Processing Details</a> <a href="#ref-for-propdef-white-space-4">(2)</a>
     <li><a href="#ref-for-propdef-white-space-5">4.1.1. Phase I: Collapsing and Transformation</a> <a href="#ref-for-propdef-white-space-6">(2)</a> <a href="#ref-for-propdef-white-space-7">(3)</a> <a href="#ref-for-propdef-white-space-8">(4)</a>
-    <li><a href="#ref-for-propdef-white-space-9">4.1.2. 
+    <li><a href="#ref-for-propdef-white-space-9">4.1.2.
       Segment Break Transformation Rules</a> <a href="#ref-for-propdef-white-space-10">(2)</a>
     <li><a href="#ref-for-propdef-white-space-11">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-propdef-white-space-12">5.1. 
+    <li><a href="#ref-for-propdef-white-space-12">5.1.
 Line Breaking Details</a> <a href="#ref-for-propdef-white-space-13">(2)</a>
-    <li><a href="#ref-for-propdef-white-space-14">6.2. 
+    <li><a href="#ref-for-propdef-white-space-14">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-propdef-white-space-15">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-white-space-normal">
    <b><a href="#valdef-white-space-normal">#valdef-white-space-normal</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-white-space-normal-1">3. 
-  
+    <li><a href="#ref-for-valdef-white-space-normal-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-valdef-white-space-normal-2">(2)</a> <a href="#ref-for-valdef-white-space-normal-3">(3)</a> <a href="#ref-for-valdef-white-space-normal-4">(4)</a> <a href="#ref-for-valdef-white-space-normal-5">(5)</a>
     <li><a href="#ref-for-valdef-white-space-normal-6">4.1.1. Phase I: Collapsing and Transformation</a> <a href="#ref-for-valdef-white-space-normal-7">(2)</a>
    </ul>
@@ -3369,19 +3379,19 @@ Line Breaking Details</a> <a href="#ref-for-propdef-white-space-13">(2)</a>
   <aside class="dfn-panel" data-for="valdef-white-space-pre">
    <b><a href="#valdef-white-space-pre">#valdef-white-space-pre</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-white-space-pre-1">3. 
-  
+    <li><a href="#ref-for-valdef-white-space-pre-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-valdef-white-space-pre-2">(2)</a> <a href="#ref-for-valdef-white-space-pre-3">(3)</a>
     <li><a href="#ref-for-valdef-white-space-pre-4">4.1.1. Phase I: Collapsing and Transformation</a>
-    <li><a href="#ref-for-valdef-white-space-pre-5">4.1.2. 
+    <li><a href="#ref-for-valdef-white-space-pre-5">4.1.2.
       Segment Break Transformation Rules</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-white-space-nowrap">
    <b><a href="#valdef-white-space-nowrap">#valdef-white-space-nowrap</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-white-space-nowrap-1">3. 
-  
+    <li><a href="#ref-for-valdef-white-space-nowrap-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-valdef-white-space-nowrap-2">(2)</a>
     <li><a href="#ref-for-valdef-white-space-nowrap-3">4.1.1. Phase I: Collapsing and Transformation</a>
    </ul>
@@ -3389,52 +3399,52 @@ Line Breaking Details</a> <a href="#ref-for-propdef-white-space-13">(2)</a>
   <aside class="dfn-panel" data-for="valdef-white-space-pre-wrap">
    <b><a href="#valdef-white-space-pre-wrap">#valdef-white-space-pre-wrap</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-white-space-pre-wrap-1">3. 
-  
+    <li><a href="#ref-for-valdef-white-space-pre-wrap-1">3.
+
   White Space and Wrapping: the white-space property</a>
     <li><a href="#ref-for-valdef-white-space-pre-wrap-2">4.1.1. Phase I: Collapsing and Transformation</a>
-    <li><a href="#ref-for-valdef-white-space-pre-wrap-3">4.1.2. 
+    <li><a href="#ref-for-valdef-white-space-pre-wrap-3">4.1.2.
       Segment Break Transformation Rules</a>
     <li><a href="#ref-for-valdef-white-space-pre-wrap-4">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-valdef-white-space-pre-wrap-5">6.2. 
+    <li><a href="#ref-for-valdef-white-space-pre-wrap-5">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-white-space-pre-line">
    <b><a href="#valdef-white-space-pre-line">#valdef-white-space-pre-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-white-space-pre-line-1">3. 
-  
+    <li><a href="#ref-for-valdef-white-space-pre-line-1">3.
+
   White Space and Wrapping: the white-space property</a>
     <li><a href="#ref-for-valdef-white-space-pre-line-2">4.1.1. Phase I: Collapsing and Transformation</a>
-    <li><a href="#ref-for-valdef-white-space-pre-line-3">4.1.2. 
+    <li><a href="#ref-for-valdef-white-space-pre-line-3">4.1.2.
       Segment Break Transformation Rules</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="segment-break">
    <b><a href="#segment-break">#segment-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-segment-break-1">3. 
-  
+    <li><a href="#ref-for-segment-break-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-segment-break-2">(2)</a>
-    <li><a href="#ref-for-segment-break-3">4. 
+    <li><a href="#ref-for-segment-break-3">4.
   White Space Processing Details</a>
     <li><a href="#ref-for-segment-break-4">4.1.1. Phase I: Collapsing and Transformation</a>
-    <li><a href="#ref-for-segment-break-5">4.1.2. 
+    <li><a href="#ref-for-segment-break-5">4.1.2.
       Segment Break Transformation Rules</a> <a href="#ref-for-segment-break-6">(2)</a> <a href="#ref-for-segment-break-7">(3)</a> <a href="#ref-for-segment-break-8">(4)</a> <a href="#ref-for-segment-break-9">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="white-space">
    <b><a href="#white-space">#white-space</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-white-space-1">1. 
+    <li><a href="#ref-for-white-space-1">1.
 Introduction</a> <a href="#ref-for-white-space-2">(2)</a>
-    <li><a href="#ref-for-white-space-3">3. 
-  
+    <li><a href="#ref-for-white-space-3">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-white-space-4">(2)</a> <a href="#ref-for-white-space-5">(3)</a> <a href="#ref-for-white-space-6">(4)</a> <a href="#ref-for-white-space-7">(5)</a> <a href="#ref-for-white-space-8">(6)</a> <a href="#ref-for-white-space-9">(7)</a> <a href="#ref-for-white-space-10">(8)</a>
-    <li><a href="#ref-for-white-space-11">4. 
+    <li><a href="#ref-for-white-space-11">4.
   White Space Processing Details</a> <a href="#ref-for-white-space-12">(2)</a>
-    <li><a href="#ref-for-white-space-13">4.1. 
+    <li><a href="#ref-for-white-space-13">4.1.
     The White Space Processing Rules</a>
     <li><a href="#ref-for-white-space-14">4.1.3. Phase II: Trimming and Positioning</a>
    </ul>
@@ -3442,9 +3452,9 @@ Introduction</a> <a href="#ref-for-white-space-2">(2)</a>
   <aside class="dfn-panel" data-for="collapsible-white-space">
    <b><a href="#collapsible-white-space">#collapsible-white-space</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-collapsible-white-space-1">4. 
+    <li><a href="#ref-for-collapsible-white-space-1">4.
   White Space Processing Details</a>
-    <li><a href="#ref-for-collapsible-white-space-2">4.1.2. 
+    <li><a href="#ref-for-collapsible-white-space-2">4.1.2.
       Segment Break Transformation Rules</a> <a href="#ref-for-collapsible-white-space-3">(2)</a>
     <li><a href="#ref-for-collapsible-white-space-4">4.1.3. Phase II: Trimming and Positioning</a>
    </ul>
@@ -3453,20 +3463,20 @@ Introduction</a> <a href="#ref-for-white-space-2">(2)</a>
    <b><a href="#tab-stop">#tab-stop</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-tab-stop-1">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-tab-stop-2">7.1. 
+    <li><a href="#ref-for-tab-stop-2">7.1.
     Text Alignment: the text-align shorthand</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="preserved">
    <b><a href="#preserved">#preserved</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-preserved-1">2.1. 
-    
-    
+    <li><a href="#ref-for-preserved-1">2.1.
+
+
     Case Transforms: the text-transform property</a>
-    <li><a href="#ref-for-preserved-2">5.1. 
+    <li><a href="#ref-for-preserved-2">5.1.
 Line Breaking Details</a>
-    <li><a href="#ref-for-preserved-3">6.2. 
+    <li><a href="#ref-for-preserved-3">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-preserved-4">(2)</a> <a href="#ref-for-preserved-5">(3)</a>
    </ul>
   </aside>
@@ -3474,7 +3484,7 @@ Line Breaking Details</a>
    <b><a href="#propdef-tab-size">#propdef-tab-size</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-tab-size-1">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-propdef-tab-size-2">4.2. 
+    <li><a href="#ref-for-propdef-tab-size-2">4.2.
     Tab Character Size: the tab-size property</a>
     <li><a href="#ref-for-propdef-tab-size-3"> Changes from the October
   2013 CSS3 Text LCWD</a>
@@ -3483,36 +3493,36 @@ Line Breaking Details</a>
   <aside class="dfn-panel" data-for="line-break">
    <b><a href="#line-break">#line-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-line-break-1">5.1. 
+    <li><a href="#ref-for-line-break-1">5.1.
 Line Breaking Details</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="forced-line-break">
    <b><a href="#forced-line-break">#forced-line-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-forced-line-break-1">3. 
-  
+    <li><a href="#ref-for-forced-line-break-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-forced-line-break-2">(2)</a> <a href="#ref-for-forced-line-break-3">(3)</a>
-    <li><a href="#ref-for-forced-line-break-4">5.1. 
+    <li><a href="#ref-for-forced-line-break-4">5.1.
 Line Breaking Details</a>
-    <li><a href="#ref-for-forced-line-break-5">7.3. 
+    <li><a href="#ref-for-forced-line-break-5">7.3.
     Last Line Alignment: the text-align-last property</a> <a href="#ref-for-forced-line-break-6">(2)</a>
-    <li><a href="#ref-for-forced-line-break-7">9.1. 
+    <li><a href="#ref-for-forced-line-break-7">9.1.
     First Line Indentation: the text-indent property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="wrapping">
    <b><a href="#wrapping">#wrapping</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-wrapping-1">3. 
-  
+    <li><a href="#ref-for-wrapping-1">3.
+
   White Space and Wrapping: the white-space property</a>
     <li><a href="#ref-for-wrapping-2">4.1.1. Phase I: Collapsing and Transformation</a>
-    <li><a href="#ref-for-wrapping-3">5.3. 
+    <li><a href="#ref-for-wrapping-3">5.3.
     Breaking Rules for Punctuation: the line-break property</a>
-    <li><a href="#ref-for-wrapping-4">6.2. 
+    <li><a href="#ref-for-wrapping-4">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a>
-    <li><a href="#ref-for-wrapping-5">6.3. 
+    <li><a href="#ref-for-wrapping-5">6.3.
 Shaping Across Intra-word Breaks</a>
     <li><a href="#ref-for-wrapping-6">Appendix A:
 Text Processing Order of Operations</a>
@@ -3521,41 +3531,41 @@ Text Processing Order of Operations</a>
   <aside class="dfn-panel" data-for="soft-wrap-break">
    <b><a href="#soft-wrap-break">#soft-wrap-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-soft-wrap-break-1">9.1. 
+    <li><a href="#ref-for-soft-wrap-break-1">9.1.
     First Line Indentation: the text-indent property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="soft-wrap-opportunity">
    <b><a href="#soft-wrap-opportunity">#soft-wrap-opportunity</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-soft-wrap-opportunity-1">3. 
-  
+    <li><a href="#ref-for-soft-wrap-opportunity-1">3.
+
   White Space and Wrapping: the white-space property</a> <a href="#ref-for-soft-wrap-opportunity-2">(2)</a>
     <li><a href="#ref-for-soft-wrap-opportunity-3">4.1.1. Phase I: Collapsing and Transformation</a> <a href="#ref-for-soft-wrap-opportunity-4">(2)</a>
-    <li><a href="#ref-for-soft-wrap-opportunity-5">5. 
+    <li><a href="#ref-for-soft-wrap-opportunity-5">5.
   Line Breaking and Word Boundaries</a> <a href="#ref-for-soft-wrap-opportunity-6">(2)</a> <a href="#ref-for-soft-wrap-opportunity-7">(3)</a> <a href="#ref-for-soft-wrap-opportunity-8">(4)</a> <a href="#ref-for-soft-wrap-opportunity-9">(5)</a>
-    <li><a href="#ref-for-soft-wrap-opportunity-10">5.1. 
+    <li><a href="#ref-for-soft-wrap-opportunity-10">5.1.
 Line Breaking Details</a> <a href="#ref-for-soft-wrap-opportunity-11">(2)</a> <a href="#ref-for-soft-wrap-opportunity-12">(3)</a> <a href="#ref-for-soft-wrap-opportunity-13">(4)</a> <a href="#ref-for-soft-wrap-opportunity-14">(5)</a>
-    <li><a href="#ref-for-soft-wrap-opportunity-15">5.2. 
+    <li><a href="#ref-for-soft-wrap-opportunity-15">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-soft-wrap-opportunity-16">(2)</a> <a href="#ref-for-soft-wrap-opportunity-17">(3)</a> <a href="#ref-for-soft-wrap-opportunity-18">(4)</a> <a href="#ref-for-soft-wrap-opportunity-19">(5)</a>
     <li><a href="#ref-for-soft-wrap-opportunity-20">6. Breaking Within Words</a>
     <li><a href="#ref-for-soft-wrap-opportunity-21">6.1. Hyphenation Control: the hyphens property</a>
-    <li><a href="#ref-for-soft-wrap-opportunity-22">6.2. 
+    <li><a href="#ref-for-soft-wrap-opportunity-22">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a>
-    <li><a href="#ref-for-soft-wrap-opportunity-23">6.3. 
+    <li><a href="#ref-for-soft-wrap-opportunity-23">6.3.
 Shaping Across Intra-word Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-word-break">
    <b><a href="#propdef-word-break">#propdef-word-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-word-break-1">5.2. 
+    <li><a href="#ref-for-propdef-word-break-1">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-propdef-word-break-2">(2)</a> <a href="#ref-for-propdef-word-break-3">(3)</a> <a href="#ref-for-propdef-word-break-4">(4)</a> <a href="#ref-for-propdef-word-break-5">(5)</a> <a href="#ref-for-propdef-word-break-6">(6)</a>
-    <li><a href="#ref-for-propdef-word-break-7">5.3. 
+    <li><a href="#ref-for-propdef-word-break-7">5.3.
     Breaking Rules for Punctuation: the line-break property</a>
-    <li><a href="#ref-for-propdef-word-break-8">6.2. 
+    <li><a href="#ref-for-propdef-word-break-8">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-propdef-word-break-9">(2)</a>
-    <li><a href="#ref-for-propdef-word-break-10">6.3. 
+    <li><a href="#ref-for-propdef-word-break-10">6.3.
 Shaping Across Intra-word Breaks</a>
     <li><a href="#ref-for-propdef-word-break-11"> Changes from the October
   2013 CSS3 Text LCWD</a>
@@ -3564,51 +3574,51 @@ Shaping Across Intra-word Breaks</a>
   <aside class="dfn-panel" data-for="valdef-word-break-normal">
    <b><a href="#valdef-word-break-normal">#valdef-word-break-normal</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-word-break-normal-1">5.2. 
+    <li><a href="#ref-for-valdef-word-break-normal-1">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-valdef-word-break-normal-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-word-break-break-all">
    <b><a href="#valdef-word-break-break-all">#valdef-word-break-break-all</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-word-break-break-all-1">5.2. 
+    <li><a href="#ref-for-valdef-word-break-break-all-1">5.2.
     Breaking Rules for Letters: the word-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-line-break">
    <b><a href="#propdef-line-break">#propdef-line-break</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-line-break-1">5.2. 
+    <li><a href="#ref-for-propdef-line-break-1">5.2.
     Breaking Rules for Letters: the word-break property</a> <a href="#ref-for-propdef-line-break-2">(2)</a>
-    <li><a href="#ref-for-propdef-line-break-3">5.3. 
+    <li><a href="#ref-for-propdef-line-break-3">5.3.
     Breaking Rules for Punctuation: the line-break property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-line-break-loose">
    <b><a href="#valdef-line-break-loose">#valdef-line-break-loose</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-line-break-loose-1">5.3. 
+    <li><a href="#ref-for-valdef-line-break-loose-1">5.3.
     Breaking Rules for Punctuation: the line-break property</a> <a href="#ref-for-valdef-line-break-loose-2">(2)</a> <a href="#ref-for-valdef-line-break-loose-3">(3)</a> <a href="#ref-for-valdef-line-break-loose-4">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-line-break-normal">
    <b><a href="#valdef-line-break-normal">#valdef-line-break-normal</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-line-break-normal-1">5.3. 
+    <li><a href="#ref-for-valdef-line-break-normal-1">5.3.
     Breaking Rules for Punctuation: the line-break property</a> <a href="#ref-for-valdef-line-break-normal-2">(2)</a> <a href="#ref-for-valdef-line-break-normal-3">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-line-break-strict">
    <b><a href="#valdef-line-break-strict">#valdef-line-break-strict</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-line-break-strict-1">5.3. 
+    <li><a href="#ref-for-valdef-line-break-strict-1">5.3.
     Breaking Rules for Punctuation: the line-break property</a> <a href="#ref-for-valdef-line-break-strict-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="hyphenate">
    <b><a href="#hyphenate">#hyphenate</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-hyphenate-1">6.3. 
+    <li><a href="#ref-for-hyphenate-1">6.3.
 Shaping Across Intra-word Breaks</a>
    </ul>
   </aside>
@@ -3629,26 +3639,26 @@ Shaping Across Intra-word Breaks</a>
    <b><a href="#propdef-overflow-wrap">#propdef-overflow-wrap</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-propdef-overflow-wrap-1">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-propdef-overflow-wrap-2">5.2. 
+    <li><a href="#ref-for-propdef-overflow-wrap-2">5.2.
     Breaking Rules for Letters: the word-break property</a>
     <li><a href="#ref-for-propdef-overflow-wrap-3">6. Breaking Within Words</a>
-    <li><a href="#ref-for-propdef-overflow-wrap-4">6.2. 
+    <li><a href="#ref-for-propdef-overflow-wrap-4">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-propdef-overflow-wrap-5">(2)</a> <a href="#ref-for-propdef-overflow-wrap-6">(3)</a> <a href="#ref-for-propdef-overflow-wrap-7">(4)</a> <a href="#ref-for-propdef-overflow-wrap-8">(5)</a> <a href="#ref-for-propdef-overflow-wrap-9">(6)</a>
-    <li><a href="#ref-for-propdef-overflow-wrap-10">6.3. 
+    <li><a href="#ref-for-propdef-overflow-wrap-10">6.3.
 Shaping Across Intra-word Breaks</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-word-wrap">
    <b><a href="#propdef-word-wrap">#propdef-word-wrap</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-word-wrap-1">6.2. 
+    <li><a href="#ref-for-propdef-word-wrap-1">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-propdef-word-wrap-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-overflow-wrap-break-word">
    <b><a href="#valdef-overflow-wrap-break-word">#valdef-overflow-wrap-break-word</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-overflow-wrap-break-word-1">6.2. 
+    <li><a href="#ref-for-valdef-overflow-wrap-break-word-1">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a>
    </ul>
   </aside>
@@ -3656,26 +3666,26 @@ Shaping Across Intra-word Breaks</a>
    <b><a href="#valdef-overflow-wrap-break-spaces">#valdef-overflow-wrap-break-spaces</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-valdef-overflow-wrap-break-spaces-1">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-valdef-overflow-wrap-break-spaces-2">6.2. 
+    <li><a href="#ref-for-valdef-overflow-wrap-break-spaces-2">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-valdef-overflow-wrap-break-spaces-3">(2)</a> <a href="#ref-for-valdef-overflow-wrap-break-spaces-4">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-text-align">
    <b><a href="#propdef-text-align">#propdef-text-align</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-align-1">7.1. 
+    <li><a href="#ref-for-propdef-text-align-1">7.1.
     Text Alignment: the text-align shorthand</a>
-    <li><a href="#ref-for-propdef-text-align-2">7.2. 
+    <li><a href="#ref-for-propdef-text-align-2">7.2.
     Default Text Alignment: the text-align-all property</a> <a href="#ref-for-propdef-text-align-3">(2)</a> <a href="#ref-for-propdef-text-align-4">(3)</a>
-    <li><a href="#ref-for-propdef-text-align-5">7.3. 
+    <li><a href="#ref-for-propdef-text-align-5">7.3.
     Last Line Alignment: the text-align-last property</a> <a href="#ref-for-propdef-text-align-6">(2)</a> <a href="#ref-for-propdef-text-align-7">(3)</a>
-    <li><a href="#ref-for-propdef-text-align-8">7.4. 
+    <li><a href="#ref-for-propdef-text-align-8">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-propdef-text-align-9">7.4.1. 
+    <li><a href="#ref-for-propdef-text-align-9">7.4.1.
 Expanding and Compressing Text</a>
-    <li><a href="#ref-for-propdef-text-align-10">9.1. 
+    <li><a href="#ref-for-propdef-text-align-10">9.1.
     First Line Indentation: the text-indent property</a>
-    <li><a href="#ref-for-propdef-text-align-11">9.3. 
+    <li><a href="#ref-for-propdef-text-align-11">9.3.
 Bidirectionality and Line Boxes</a> <a href="#ref-for-propdef-text-align-12">(2)</a>
     <li><a href="#ref-for-propdef-text-align-13"> Changes from the October
   2013 CSS3 Text LCWD</a> <a href="#ref-for-propdef-text-align-14">(2)</a>
@@ -3684,63 +3694,63 @@ Bidirectionality and Line Boxes</a> <a href="#ref-for-propdef-text-align-12">(2)
   <aside class="dfn-panel" data-for="valdef-text-align-start">
    <b><a href="#valdef-text-align-start">#valdef-text-align-start</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-start-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-start-1">7.1.
     Text Alignment: the text-align shorthand</a> <a href="#ref-for-valdef-text-align-start-2">(2)</a>
-    <li><a href="#ref-for-valdef-text-align-start-3">7.4.3. 
+    <li><a href="#ref-for-valdef-text-align-start-3">7.4.3.
 Unexpandable Text</a>
-    <li><a href="#ref-for-valdef-text-align-start-4">9.1. 
+    <li><a href="#ref-for-valdef-text-align-start-4">9.1.
     First Line Indentation: the text-indent property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-align-end">
    <b><a href="#valdef-text-align-end">#valdef-text-align-end</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-end-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-end-1">7.1.
     Text Alignment: the text-align shorthand</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-align-center">
    <b><a href="#valdef-text-align-center">#valdef-text-align-center</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-center-1">7.4.3. 
+    <li><a href="#ref-for-valdef-text-align-center-1">7.4.3.
 Unexpandable Text</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-align-justify">
    <b><a href="#valdef-text-align-justify">#valdef-text-align-justify</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-justify-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-justify-1">7.1.
     Text Alignment: the text-align shorthand</a> <a href="#ref-for-valdef-text-align-justify-2">(2)</a> <a href="#ref-for-valdef-text-align-justify-3">(3)</a>
-    <li><a href="#ref-for-valdef-text-align-justify-4">7.3. 
+    <li><a href="#ref-for-valdef-text-align-justify-4">7.3.
     Last Line Alignment: the text-align-last property</a>
-    <li><a href="#ref-for-valdef-text-align-justify-5">7.4. 
+    <li><a href="#ref-for-valdef-text-align-justify-5">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-valdef-text-align-justify-6">7.4.3. 
+    <li><a href="#ref-for-valdef-text-align-justify-6">7.4.3.
 Unexpandable Text</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-align-justify-all">
    <b><a href="#valdef-text-align-justify-all">#valdef-text-align-justify-all</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-justify-all-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-justify-all-1">7.1.
     Text Alignment: the text-align shorthand</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-align-match-parent">
    <b><a href="#valdef-text-align-match-parent">#valdef-text-align-match-parent</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-match-parent-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-match-parent-1">7.1.
     Text Alignment: the text-align shorthand</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-text-align-all">
    <b><a href="#propdef-text-align-all">#propdef-text-align-all</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-align-all-1">7.1. 
+    <li><a href="#ref-for-propdef-text-align-all-1">7.1.
     Text Alignment: the text-align shorthand</a>
-    <li><a href="#ref-for-propdef-text-align-all-2">7.2. 
+    <li><a href="#ref-for-propdef-text-align-all-2">7.2.
     Default Text Alignment: the text-align-all property</a>
-    <li><a href="#ref-for-propdef-text-align-all-3">7.3. 
+    <li><a href="#ref-for-propdef-text-align-all-3">7.3.
     Last Line Alignment: the text-align-last property</a>
     <li><a href="#ref-for-propdef-text-align-all-4"> Changes from the October
   2013 CSS3 Text LCWD</a>
@@ -3749,15 +3759,15 @@ Unexpandable Text</a>
   <aside class="dfn-panel" data-for="propdef-text-align-last">
    <b><a href="#propdef-text-align-last">#propdef-text-align-last</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-align-last-1">7.1. 
+    <li><a href="#ref-for-propdef-text-align-last-1">7.1.
     Text Alignment: the text-align shorthand</a> <a href="#ref-for-propdef-text-align-last-2">(2)</a> <a href="#ref-for-propdef-text-align-last-3">(3)</a> <a href="#ref-for-propdef-text-align-last-4">(4)</a>
-    <li><a href="#ref-for-propdef-text-align-last-5">7.2. 
+    <li><a href="#ref-for-propdef-text-align-last-5">7.2.
     Default Text Alignment: the text-align-all property</a>
-    <li><a href="#ref-for-propdef-text-align-last-6">7.3. 
+    <li><a href="#ref-for-propdef-text-align-last-6">7.3.
     Last Line Alignment: the text-align-last property</a> <a href="#ref-for-propdef-text-align-last-7">(2)</a>
-    <li><a href="#ref-for-propdef-text-align-last-8">7.4.3. 
+    <li><a href="#ref-for-propdef-text-align-last-8">7.4.3.
 Unexpandable Text</a> <a href="#ref-for-propdef-text-align-last-9">(2)</a>
-    <li><a href="#ref-for-propdef-text-align-last-10">9.3. 
+    <li><a href="#ref-for-propdef-text-align-last-10">9.3.
 Bidirectionality and Line Boxes</a>
     <li><a href="#ref-for-propdef-text-align-last-11"> Changes from the October
   2013 CSS3 Text LCWD</a> <a href="#ref-for-propdef-text-align-last-12">(2)</a>
@@ -3766,62 +3776,62 @@ Bidirectionality and Line Boxes</a>
   <aside class="dfn-panel" data-for="valdef-text-align-last-auto">
    <b><a href="#valdef-text-align-last-auto">#valdef-text-align-last-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-align-last-auto-1">7.1. 
+    <li><a href="#ref-for-valdef-text-align-last-auto-1">7.1.
     Text Alignment: the text-align shorthand</a>
-    <li><a href="#ref-for-valdef-text-align-last-auto-2">7.2. 
+    <li><a href="#ref-for-valdef-text-align-last-auto-2">7.2.
     Default Text Alignment: the text-align-all property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-text-justify">
    <b><a href="#propdef-text-justify">#propdef-text-justify</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-justify-1">7.1. 
+    <li><a href="#ref-for-propdef-text-justify-1">7.1.
     Text Alignment: the text-align shorthand</a> <a href="#ref-for-propdef-text-justify-2">(2)</a>
-    <li><a href="#ref-for-propdef-text-justify-3">7.4. 
+    <li><a href="#ref-for-propdef-text-justify-3">7.4.
     Justification Method: the text-justify property</a> <a href="#ref-for-propdef-text-justify-4">(2)</a> <a href="#ref-for-propdef-text-justify-5">(3)</a> <a href="#ref-for-propdef-text-justify-6">(4)</a> <a href="#ref-for-propdef-text-justify-7">(5)</a>
-    <li><a href="#ref-for-propdef-text-justify-8">7.4.1. 
+    <li><a href="#ref-for-propdef-text-justify-8">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-propdef-text-justify-9">(2)</a>
-    <li><a href="#ref-for-propdef-text-justify-10">7.4.3. 
+    <li><a href="#ref-for-propdef-text-justify-10">7.4.3.
 Unexpandable Text</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-justify-auto">
    <b><a href="#valdef-text-justify-auto">#valdef-text-justify-auto</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-justify-auto-1">7.4.5. 
+    <li><a href="#ref-for-valdef-text-justify-auto-1">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-valdef-text-justify-auto-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-justify-inter-word">
    <b><a href="#valdef-text-justify-inter-word">#valdef-text-justify-inter-word</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-justify-inter-word-1">7.4. 
+    <li><a href="#ref-for-valdef-text-justify-inter-word-1">7.4.
     Justification Method: the text-justify property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-justify-inter-character">
    <b><a href="#valdef-text-justify-inter-character">#valdef-text-justify-inter-character</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-justify-inter-character-1">7.4.1. 
+    <li><a href="#ref-for-valdef-text-justify-inter-character-1">7.4.1.
 Expanding and Compressing Text</a>
-    <li><a href="#ref-for-valdef-text-justify-inter-character-2">7.4.3. 
+    <li><a href="#ref-for-valdef-text-justify-inter-character-2">7.4.3.
 Unexpandable Text</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="justification-opportunity">
    <b><a href="#justification-opportunity">#justification-opportunity</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-justification-opportunity-1">7.1. 
+    <li><a href="#ref-for-justification-opportunity-1">7.1.
     Text Alignment: the text-align shorthand</a>
-    <li><a href="#ref-for-justification-opportunity-2">7.4. 
+    <li><a href="#ref-for-justification-opportunity-2">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-justification-opportunity-3">7.4.1. 
+    <li><a href="#ref-for-justification-opportunity-3">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-justification-opportunity-4">(2)</a> <a href="#ref-for-justification-opportunity-5">(3)</a> <a href="#ref-for-justification-opportunity-6">(4)</a> <a href="#ref-for-justification-opportunity-7">(5)</a> <a href="#ref-for-justification-opportunity-8">(6)</a> <a href="#ref-for-justification-opportunity-9">(7)</a> <a href="#ref-for-justification-opportunity-10">(8)</a> <a href="#ref-for-justification-opportunity-11">(9)</a>
-    <li><a href="#ref-for-justification-opportunity-12">7.4.2. 
+    <li><a href="#ref-for-justification-opportunity-12">7.4.2.
 Handling Symbols and Punctuation</a> <a href="#ref-for-justification-opportunity-13">(2)</a> <a href="#ref-for-justification-opportunity-14">(3)</a> <a href="#ref-for-justification-opportunity-15">(4)</a>
-    <li><a href="#ref-for-justification-opportunity-16">7.4.4. 
+    <li><a href="#ref-for-justification-opportunity-16">7.4.4.
 Cursive Scripts</a> <a href="#ref-for-justification-opportunity-17">(2)</a>
-    <li><a href="#ref-for-justification-opportunity-18">7.4.5. 
+    <li><a href="#ref-for-justification-opportunity-18">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-justification-opportunity-19">(2)</a> <a href="#ref-for-justification-opportunity-20">(3)</a>
     <li><a href="#ref-for-justification-opportunity-21"> Appendix C: Scripts and Spacing</a>
    </ul>
@@ -3829,17 +3839,17 @@ Minimum Requirements for auto Justification</a> <a href="#ref-for-justification-
   <aside class="dfn-panel" data-for="propdef-word-spacing">
    <b><a href="#propdef-word-spacing">#propdef-word-spacing</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-word-spacing-1">4.2. 
+    <li><a href="#ref-for-propdef-word-spacing-1">4.2.
     Tab Character Size: the tab-size property</a>
-    <li><a href="#ref-for-propdef-word-spacing-2">7.4. 
+    <li><a href="#ref-for-propdef-word-spacing-2">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-propdef-word-spacing-3">7.4.1. 
+    <li><a href="#ref-for-propdef-word-spacing-3">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-propdef-word-spacing-4">(2)</a>
-    <li><a href="#ref-for-propdef-word-spacing-5">8. 
+    <li><a href="#ref-for-propdef-word-spacing-5">8.
   Spacing</a> <a href="#ref-for-propdef-word-spacing-6">(2)</a>
-    <li><a href="#ref-for-propdef-word-spacing-7">8.1. 
+    <li><a href="#ref-for-propdef-word-spacing-7">8.1.
 Word Spacing: the word-spacing property</a>
-    <li><a href="#ref-for-propdef-word-spacing-8">8.2. 
+    <li><a href="#ref-for-propdef-word-spacing-8">8.2.
     Tracking: the letter-spacing property</a>
     <li><a href="#ref-for-propdef-word-spacing-9">Appendix A:
 Text Processing Order of Operations</a>
@@ -3850,32 +3860,32 @@ Text Processing Order of Operations</a>
   <aside class="dfn-panel" data-for="word-separator">
    <b><a href="#word-separator">#word-separator</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-word-separator-1">7.4. 
+    <li><a href="#ref-for-word-separator-1">7.4.
     Justification Method: the text-justify property</a> <a href="#ref-for-word-separator-2">(2)</a>
-    <li><a href="#ref-for-word-separator-3">7.4.1. 
+    <li><a href="#ref-for-word-separator-3">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-word-separator-4">(2)</a>
-    <li><a href="#ref-for-word-separator-5">7.4.5. 
+    <li><a href="#ref-for-word-separator-5">7.4.5.
 Minimum Requirements for auto Justification</a>
-    <li><a href="#ref-for-word-separator-6">8. 
+    <li><a href="#ref-for-word-separator-6">8.
   Spacing</a>
-    <li><a href="#ref-for-word-separator-7">8.1. 
+    <li><a href="#ref-for-word-separator-7">8.1.
 Word Spacing: the word-spacing property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-letter-spacing">
    <b><a href="#propdef-letter-spacing">#propdef-letter-spacing</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-letter-spacing-1">4.2. 
+    <li><a href="#ref-for-propdef-letter-spacing-1">4.2.
     Tab Character Size: the tab-size property</a>
-    <li><a href="#ref-for-propdef-letter-spacing-2">7.4. 
+    <li><a href="#ref-for-propdef-letter-spacing-2">7.4.
     Justification Method: the text-justify property</a>
-    <li><a href="#ref-for-propdef-letter-spacing-3">7.4.1. 
+    <li><a href="#ref-for-propdef-letter-spacing-3">7.4.1.
 Expanding and Compressing Text</a> <a href="#ref-for-propdef-letter-spacing-4">(2)</a>
-    <li><a href="#ref-for-propdef-letter-spacing-5">8. 
+    <li><a href="#ref-for-propdef-letter-spacing-5">8.
   Spacing</a>
-    <li><a href="#ref-for-propdef-letter-spacing-6">8.2. 
+    <li><a href="#ref-for-propdef-letter-spacing-6">8.2.
     Tracking: the letter-spacing property</a> <a href="#ref-for-propdef-letter-spacing-7">(2)</a> <a href="#ref-for-propdef-letter-spacing-8">(3)</a> <a href="#ref-for-propdef-letter-spacing-9">(4)</a> <a href="#ref-for-propdef-letter-spacing-10">(5)</a> <a href="#ref-for-propdef-letter-spacing-11">(6)</a>
-    <li><a href="#ref-for-propdef-letter-spacing-12">8.2.1. 
+    <li><a href="#ref-for-propdef-letter-spacing-12">8.2.1.
 Cursive Scripts</a> <a href="#ref-for-propdef-letter-spacing-13">(2)</a> <a href="#ref-for-propdef-letter-spacing-14">(3)</a> <a href="#ref-for-propdef-letter-spacing-15">(4)</a>
     <li><a href="#ref-for-propdef-letter-spacing-16">Appendix A:
 Text Processing Order of Operations</a>
@@ -3887,36 +3897,36 @@ Text Processing Order of Operations</a>
   <aside class="dfn-panel" data-for="propdef-text-indent">
    <b><a href="#propdef-text-indent">#propdef-text-indent</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-text-indent-1">9. 
+    <li><a href="#ref-for-propdef-text-indent-1">9.
   Edge Effects</a>
-    <li><a href="#ref-for-propdef-text-indent-2">9.1. 
+    <li><a href="#ref-for-propdef-text-indent-2">9.1.
     First Line Indentation: the text-indent property</a> <a href="#ref-for-propdef-text-indent-3">(2)</a> <a href="#ref-for-propdef-text-indent-4">(3)</a> <a href="#ref-for-propdef-text-indent-5">(4)</a> <a href="#ref-for-propdef-text-indent-6">(5)</a>
-    <li><a href="#ref-for-propdef-text-indent-7">9.3. 
+    <li><a href="#ref-for-propdef-text-indent-7">9.3.
 Bidirectionality and Line Boxes</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-indent-each-line">
    <b><a href="#valdef-text-indent-each-line">#valdef-text-indent-each-line</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-indent-each-line-1">9.1. 
+    <li><a href="#ref-for-valdef-text-indent-each-line-1">9.1.
     First Line Indentation: the text-indent property</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-text-indent-hanging">
    <b><a href="#valdef-text-indent-hanging">#valdef-text-indent-hanging</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-text-indent-hanging-1">9.1. 
+    <li><a href="#ref-for-valdef-text-indent-hanging-1">9.1.
     First Line Indentation: the text-indent property</a> <a href="#ref-for-valdef-text-indent-hanging-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="propdef-hanging-punctuation">
    <b><a href="#propdef-hanging-punctuation">#propdef-hanging-punctuation</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-propdef-hanging-punctuation-1">9. 
+    <li><a href="#ref-for-propdef-hanging-punctuation-1">9.
   Edge Effects</a>
-    <li><a href="#ref-for-propdef-hanging-punctuation-2">9.2. 
+    <li><a href="#ref-for-propdef-hanging-punctuation-2">9.2.
     Hanging Punctuation: the hanging-punctuation property</a> <a href="#ref-for-propdef-hanging-punctuation-3">(2)</a>
-    <li><a href="#ref-for-propdef-hanging-punctuation-4">9.3. 
+    <li><a href="#ref-for-propdef-hanging-punctuation-4">9.3.
 Bidirectionality and Line Boxes</a>
    </ul>
   </aside>
@@ -3924,62 +3934,62 @@ Bidirectionality and Line Boxes</a>
    <b><a href="#hang">#hang</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-hang-1">4.1.3. Phase II: Trimming and Positioning</a>
-    <li><a href="#ref-for-hang-2">6.2. 
+    <li><a href="#ref-for-hang-2">6.2.
     Overflow Wrapping: the overflow-wrap/word-wrap property</a> <a href="#ref-for-hang-3">(2)</a> <a href="#ref-for-hang-4">(3)</a>
-    <li><a href="#ref-for-hang-5">9.2. 
+    <li><a href="#ref-for-hang-5">9.2.
     Hanging Punctuation: the hanging-punctuation property</a> <a href="#ref-for-hang-6">(2)</a> <a href="#ref-for-hang-7">(3)</a> <a href="#ref-for-hang-8">(4)</a> <a href="#ref-for-hang-9">(5)</a> <a href="#ref-for-hang-10">(6)</a> <a href="#ref-for-hang-11">(7)</a> <a href="#ref-for-hang-12">(8)</a> <a href="#ref-for-hang-13">(9)</a> <a href="#ref-for-hang-14">(10)</a> <a href="#ref-for-hang-15">(11)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-hanging-punctuation-force-end">
    <b><a href="#valdef-hanging-punctuation-force-end">#valdef-hanging-punctuation-force-end</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-hanging-punctuation-force-end-1">9.2. 
+    <li><a href="#ref-for-valdef-hanging-punctuation-force-end-1">9.2.
     Hanging Punctuation: the hanging-punctuation property</a> <a href="#ref-for-valdef-hanging-punctuation-force-end-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="valdef-hanging-punctuation-allow-end">
    <b><a href="#valdef-hanging-punctuation-allow-end">#valdef-hanging-punctuation-allow-end</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-valdef-hanging-punctuation-allow-end-1">9.2. 
+    <li><a href="#ref-for-valdef-hanging-punctuation-allow-end-1">9.2.
     Hanging Punctuation: the hanging-punctuation property</a> <a href="#ref-for-valdef-hanging-punctuation-allow-end-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="stop-or-comma">
    <b><a href="#stop-or-comma">#stop-or-comma</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-stop-or-comma-1">9.2. 
+    <li><a href="#ref-for-stop-or-comma-1">9.2.
     Hanging Punctuation: the hanging-punctuation property</a> <a href="#ref-for-stop-or-comma-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="block-scripts">
    <b><a href="#block-scripts">#block-scripts</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-block-scripts-1">7.4.5. 
+    <li><a href="#ref-for-block-scripts-1">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-block-scripts-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="clustered-scripts">
    <b><a href="#clustered-scripts">#clustered-scripts</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-clustered-scripts-1">7.4.5. 
+    <li><a href="#ref-for-clustered-scripts-1">7.4.5.
 Minimum Requirements for auto Justification</a> <a href="#ref-for-clustered-scripts-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="cursive-script">
    <b><a href="#cursive-script">#cursive-script</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-cursive-script-1">7.4.4. 
+    <li><a href="#ref-for-cursive-script-1">7.4.4.
 Cursive Scripts</a> <a href="#ref-for-cursive-script-2">(2)</a>
-    <li><a href="#ref-for-cursive-script-3">8.2.1. 
+    <li><a href="#ref-for-cursive-script-3">8.2.1.
 Cursive Scripts</a> <a href="#ref-for-cursive-script-4">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="unicode-east-asian-width">
    <b><a href="#unicode-east-asian-width">#unicode-east-asian-width</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unicode-east-asian-width-1">4.1.2. 
+    <li><a href="#ref-for-unicode-east-asian-width-1">4.1.2.
       Segment Break Transformation Rules</a>
-    <li><a href="#ref-for-unicode-east-asian-width-2">5.3. 
+    <li><a href="#ref-for-unicode-east-asian-width-2">5.3.
     Breaking Rules for Punctuation: the line-break property</a> <a href="#ref-for-unicode-east-asian-width-3">(2)</a>
     <li><a href="#ref-for-unicode-east-asian-width-4"> Appendix C: Scripts and Spacing</a>
    </ul>
@@ -3987,14 +3997,14 @@ Cursive Scripts</a> <a href="#ref-for-cursive-script-4">(2)</a>
   <aside class="dfn-panel" data-for="unicode-general-category">
    <b><a href="#unicode-general-category">#unicode-general-category</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unicode-general-category-1">4. 
+    <li><a href="#ref-for-unicode-general-category-1">4.
   White Space Processing Details</a> <a href="#ref-for-unicode-general-category-2">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="unicode-script">
    <b><a href="#unicode-script">#unicode-script</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unicode-script-1">4. 
+    <li><a href="#ref-for-unicode-script-1">4.
   White Space Processing Details</a>
     <li><a href="#ref-for-unicode-script-2"> Appendix C: Scripts and Spacing</a> <a href="#ref-for-unicode-script-3">(2)</a> <a href="#ref-for-unicode-script-4">(3)</a> <a href="#ref-for-unicode-script-5">(4)</a>
    </ul>
